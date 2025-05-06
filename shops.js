@@ -35,7 +35,7 @@ async function main() {
   console.log('回傳店鋪數：', json.data.length);
 
   // 將 shop 資料寫入 shops.json
-  await writeFile('shops.json', JSON.stringify(json.data, null, 2));  // 寫入檔案:contentReference[oaicite:8]{index=8}
+  await writeFile('data/shops.json', JSON.stringify(json.data, null, 2));  // 寫入檔案:contentReference[oaicite:8]{index=8}
   console.log('✔ shops.json 已寫入');
 }
 

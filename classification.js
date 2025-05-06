@@ -9,7 +9,7 @@ async function main() {
   const data = await res.json();
 
   console.log(data.data); // 顯示內容
-  await writeFile('classification.json', JSON.stringify(data.data, null, 2));
+  await writeFile('data/classification.json', JSON.stringify(data.data, null, 2));
   console.log('✔ 已寫入分類資料.json');
 }
 
