@@ -1,20 +1,14 @@
-/* style.css */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  /* grid 容器 */
-  .body-grid {
-    display: grid;
-    grid-template-areas:
-      "content setting"   /* 第一列：左 content、右 setting */
-      "content main";      /* 第二列：左 content（跨兩列）、右 main */
-    grid-template-columns: 300px 1fr;  /* 左 300px，右 剩餘空間 */ 
-    grid-template-rows: auto 1fr;      /* 上方自適高度，下方撐滿 */ 
-    height: 100vh;                     /* 滿螢幕高度 */ 
-  }
-  .content   { grid-area: content; background: red;   overflow: auto; }
-  .setting   { grid-area: setting; background: aqua;  }
-  .main-map  { grid-area: main;    background: #eef;  }
-  
+html,body{height:100%;margin:0;padding:0;}
+.body-grid {
+  display: grid;
+  grid-template-areas:
+    "content setting"
+    "content main";
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+.content  { grid-area: content; background: #fdd; overflow:auto; }
+.setting  { grid-area: setting; background: #dfd; padding:8px; }
+.main-map { grid-area: main; position: relative; }
+#map      { position:absolute; top:0; right:0; bottom:0; left:0; }
