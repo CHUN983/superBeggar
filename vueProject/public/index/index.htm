@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <title>選擇地區查詢即期品</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h3>選擇地區查詢即期品</h3>
+
+    <label for="city">縣市：</label>
+    <select id="city">
+      <option value="">請選擇</option>
+    </select>
+
+    <label for="district">區域：</label>
+    <select id="district" disabled>
+      <option value="">請先選擇縣市</option>
+    </select>
+
+    <p id="result">請選擇地區</p>
+  </div>
+
+  <script src="../main.js"></script>
+</body>
+</html>

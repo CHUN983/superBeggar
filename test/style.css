@@ -1,0 +1,14 @@
+html,body{height:100%;margin:0;padding:0;}
+.body-grid {
+  display: grid;
+  grid-template-areas:
+    "content setting"
+    "content main";
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+.content  { grid-area: content; background: #fdd; overflow:auto; }
+.setting  { grid-area: setting; background: #dfd; padding:8px; }
+.main-map { grid-area: main; position: relative; }
+#map      { position:absolute; top:0; right:0; bottom:0; left:0; }

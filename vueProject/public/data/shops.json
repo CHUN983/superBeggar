@@ -1,0 +1,2870 @@
+[
+  {
+    "oldPKey": "004300",
+    "name": "全家仁武仁龍店",
+    "tel": "07-3720423",
+    "post": null,
+    "city": null,
+    "areaCode": null,
+    "periodType": 0,
+    "longitude": 120.37439,
+    "latitude": 22.696217,
+    "distance": 0,
+    "address": "高雄市仁武區烏林里仁林路１９０號壹樓",
+    "updateDate": "2025-05-07T21:40:01+08:00",
+    "info": [
+      {
+        "code": "A",
+        "name": "飯糰手卷",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-onigiri.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "077",
+            "name": "４℃壽司手卷",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0969172",
+                "name": "日式明太子炙烤牛飯卷",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "065",
+            "name": "飯糰４度Ｃ",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1048642",
+                "name": "大口花椒香麻雞飯糰",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "B",
+        "name": "飯類主食",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-obentou.svg",
+        "qty": 3,
+        "categories": [
+          {
+            "code": "095",
+            "name": "其他飯類",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0247516",
+                "name": "優質池上飯",
+                "qty": 2
+              }
+            ]
+          },
+          {
+            "code": "083",
+            "name": "便當４℃",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0904302",
+                "name": "星-健身G肉餐盒",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "C",
+        "name": "麵類主食",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-raamen.svg",
+        "qty": 7,
+        "categories": [
+          {
+            "code": "112",
+            "name": "熱湯麵",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0587354",
+                "name": "赤肉羹麵",
+                "qty": 2
+              }
+            ]
+          },
+          {
+            "code": "124",
+            "name": "義大利麵",
+            "qty": 5,
+            "products": [
+              {
+                "code": "0882817",
+                "name": "星-明太子乳香義大利麵",
+                "qty": 2
+              },
+              {
+                "code": "0916074",
+                "name": "星-焗烤起司雙饗筆尖麵",
+                "qty": 1
+              },
+              {
+                "code": "1037471",
+                "name": "粉紅醬鮮蝦細扁麵",
+                "qty": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "D",
+        "name": "湯品小吃",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sunakku.svg",
+        "qty": 4,
+        "categories": [
+          {
+            "code": "B52",
+            "name": "烤炸物",
+            "qty": 2,
+            "products": [
+              {
+                "code": "1002793",
+                "name": "麻辣虎皮鳳爪",
+                "qty": 2
+              }
+            ]
+          },
+          {
+            "code": "155",
+            "name": "特色小吃",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1056188",
+                "name": "香濃起司白醬花椰",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "153",
+            "name": "湯品",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1057702",
+                "name": "西湖牛肉羹",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "G",
+        "name": "麵包甜點",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-pan.svg",
+        "qty": 1,
+        "categories": [
+          {
+            "code": "187",
+            "name": "麵包二配",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1870203",
+                "name": "二配香濃牛奶好棒棒",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "H",
+        "name": "吐司蛋糕",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-keiki.svg",
+        "qty": 5,
+        "categories": [
+          {
+            "code": "192",
+            "name": "蛋糕",
+            "qty": 3,
+            "products": [
+              {
+                "code": "0065326",
+                "name": "一配起酥蛋糕",
+                "qty": 1
+              },
+              {
+                "code": "1069210",
+                "name": "一配抹茶甜甜圈蛋糕",
+                "qty": 1
+              },
+              {
+                "code": "1089000",
+                "name": "一配胖貘胖芙可可",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "191",
+            "name": "小吐司餐包",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0891090",
+                "name": "一配琥珀楓糖小可頌",
+                "qty": 2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "oldPKey": "008129",
+    "name": "全家仁武澄觀店",
+    "tel": "07-3724926",
+    "post": null,
+    "city": null,
+    "areaCode": null,
+    "periodType": 0,
+    "longitude": 120.35916,
+    "latitude": 22.701712,
+    "distance": 0,
+    "address": "高雄市仁武區澄觀路一段１１１１號",
+    "updateDate": "2025-05-07T21:40:01+08:00",
+    "info": [
+      {
+        "code": "A",
+        "name": "飯糰手卷",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-onigiri.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "065",
+            "name": "飯糰４度Ｃ",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0843029",
+                "name": "麻油雞飯糰",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "061",
+            "name": "飯糰一配",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1086848",
+                "name": "一配秘傳麻辣鯖魚飯糰",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "B",
+        "name": "飯類主食",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-obentou.svg",
+        "qty": 1,
+        "categories": [
+          {
+            "code": "095",
+            "name": "其他飯類",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0247516",
+                "name": "優質池上飯",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "C",
+        "name": "麵類主食",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-raamen.svg",
+        "qty": 4,
+        "categories": [
+          {
+            "code": "122",
+            "name": "熱食麵",
+            "qty": 3,
+            "products": [
+              {
+                "code": "0477731",
+                "name": "星-皮蛋辣拌麵",
+                "qty": 1
+              },
+              {
+                "code": "0842823",
+                "name": "星-沙茶豬肉炒麵",
+                "qty": 2
+              }
+            ]
+          },
+          {
+            "code": "124",
+            "name": "義大利麵",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1059122",
+                "name": "泰式海鮮冷義大利麵",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "D",
+        "name": "湯品小吃",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sunakku.svg",
+        "qty": 1,
+        "categories": [
+          {
+            "code": "B52",
+            "name": "烤炸物",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0554250",
+                "name": "海底撈麻辣雞球",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "E",
+        "name": "三明治沙拉",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sandowicchi.svg",
+        "qty": 3,
+        "categories": [
+          {
+            "code": "141",
+            "name": "沙拉",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1058803",
+                "name": "厚蛋時蔬握沙拉",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "106",
+            "name": "三明治４度Ｃ",
+            "qty": 2,
+            "products": [
+              {
+                "code": "1088745",
+                "name": "好多菜三明治",
+                "qty": 1
+              },
+              {
+                "code": "1088763",
+                "name": "香鬆起司蛋三明治",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "F",
+        "name": "蔬果",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-ringo.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "131",
+            "name": "截切水果",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0193046",
+                "name": "季節水果拼盤（截切）",
+                "qty": 1
+              },
+              {
+                "code": "0426926",
+                "name": "橘肉哈密瓜（截切-盒）",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "G",
+        "name": "麵包甜點",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-pan.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "181",
+            "name": "甜麵包",
+            "qty": 2,
+            "products": [
+              {
+                "code": "1049193",
+                "name": "一配靜岡抹茶菠蘿",
+                "qty": 1
+              },
+              {
+                "code": "1093633",
+                "name": "一配雙莓乳酪爆擊貝果",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "H",
+        "name": "吐司蛋糕",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-keiki.svg",
+        "qty": 7,
+        "categories": [
+          {
+            "code": "197",
+            "name": "吐司蛋糕二配",
+            "qty": 4,
+            "products": [
+              {
+                "code": "0567300",
+                "name": "二配藍莓夾心土司",
+                "qty": 1
+              },
+              {
+                "code": "0640807",
+                "name": "二配醇濃黑巧鬆餅",
+                "qty": 1
+              },
+              {
+                "code": "1052093",
+                "name": "二配春韻抹茶夾心土司",
+                "qty": 1
+              },
+              {
+                "code": "1970415",
+                "name": "星－二配原味覺土司",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "191",
+            "name": "小吐司餐包",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0891090",
+                "name": "一配琥珀楓糖小可頌",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "192",
+            "name": "蛋糕",
+            "qty": 2,
+            "products": [
+              {
+                "code": "1089000",
+                "name": "一配胖貘胖芙可可",
+                "qty": 2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "oldPKey": "008515",
+    "name": "全家仁武仁德店",
+    "tel": "07-3732142",
+    "post": null,
+    "city": null,
+    "areaCode": null,
+    "periodType": 0,
+    "longitude": 120.35109,
+    "latitude": 22.700216,
+    "distance": 0,
+    "address": "高雄市仁武區仁德巷６８號",
+    "updateDate": "2025-05-07T21:40:01+08:00",
+    "info": [
+      {
+        "code": "A",
+        "name": "飯糰手卷",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-onigiri.svg",
+        "qty": 1,
+        "categories": [
+          {
+            "code": "061",
+            "name": "飯糰一配",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1086848",
+                "name": "一配秘傳麻辣鯖魚飯糰",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "B",
+        "name": "飯類主食",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-obentou.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "095",
+            "name": "其他飯類",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0247516",
+                "name": "優質池上飯",
+                "qty": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "D",
+        "name": "湯品小吃",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sunakku.svg",
+        "qty": 4,
+        "categories": [
+          {
+            "code": "B52",
+            "name": "烤炸物",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0427209",
+                "name": "匈牙利風味香草烤雞腿",
+                "qty": 1
+              },
+              {
+                "code": "0554250",
+                "name": "海底撈麻辣雞球",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "155",
+            "name": "特色小吃",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0888122",
+                "name": "香濃起司馬鈴薯",
+                "qty": 1
+              },
+              {
+                "code": "1092691",
+                "name": "咖哩魚蛋",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "G",
+        "name": "麵包甜點",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-pan.svg",
+        "qty": 4,
+        "categories": [
+          {
+            "code": "176",
+            "name": "手工甜點",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0942217",
+                "name": "法式千層蛋糕",
+                "qty": 1
+              },
+              {
+                "code": "1037871",
+                "name": "草莓乳酪千層夾心",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "181",
+            "name": "甜麵包",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1087517",
+                "name": "一配貘的可可排包",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "183",
+            "name": "鹹麵包",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1830055",
+                "name": "一配起司火腿麵包",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "H",
+        "name": "吐司蛋糕",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-keiki.svg",
+        "qty": 3,
+        "categories": [
+          {
+            "code": "192",
+            "name": "蛋糕",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1049852",
+                "name": "一配抹茶奶霜蛋糕",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "197",
+            "name": "吐司蛋糕二配",
+            "qty": 2,
+            "products": [
+              {
+                "code": "1070172",
+                "name": "二配莓果美玫鬆餅",
+                "qty": 1
+              },
+              {
+                "code": "1971702",
+                "name": "二配綿柔鮮奶土司",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "oldPKey": "010420",
+    "name": "全家仁武鳳仁店",
+    "tel": "07-3741130",
+    "post": null,
+    "city": null,
+    "areaCode": null,
+    "periodType": 0,
+    "longitude": 120.35516,
+    "latitude": 22.681402,
+    "distance": 0,
+    "address": "高雄市仁武區鳳仁路４５號",
+    "updateDate": "2025-05-07T21:40:01+08:00",
+    "info": [
+      {
+        "code": "A",
+        "name": "飯糰手卷",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-onigiri.svg",
+        "qty": 4,
+        "categories": [
+          {
+            "code": "065",
+            "name": "飯糰４度Ｃ",
+            "qty": 4,
+            "products": [
+              {
+                "code": "0943504",
+                "name": "大口美式牛肉堡飯糰",
+                "qty": 1
+              },
+              {
+                "code": "0954757",
+                "name": "糖燻野郎炙燒牛烤飯糰",
+                "qty": 2
+              },
+              {
+                "code": "0984449",
+                "name": "大口義式香草雞腿排飯糰",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "B",
+        "name": "飯類主食",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-obentou.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "083",
+            "name": "便當４℃",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0984435",
+                "name": "星-嘉義劉里長雞肉飯",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "094",
+            "name": "粥品",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1038863",
+                "name": "香濃玉米雞茸粥",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "D",
+        "name": "湯品小吃",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sunakku.svg",
+        "qty": 1,
+        "categories": [
+          {
+            "code": "153",
+            "name": "湯品",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1080474",
+                "name": "泰式酸辣海鮮湯",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "E",
+        "name": "三明治沙拉",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sandowicchi.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "141",
+            "name": "沙拉",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0803649",
+                "name": "星-青醬優格雞肉握沙拉",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "107",
+            "name": "調理麵包４度Ｃ",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1070213",
+                "name": "豬肉起司堡",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "F",
+        "name": "蔬果",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-ringo.svg",
+        "qty": 1,
+        "categories": [
+          {
+            "code": "131",
+            "name": "截切水果",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0668827",
+                "name": "富士蘋果（截切－袋）",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "G",
+        "name": "麵包甜點",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-pan.svg",
+        "qty": 7,
+        "categories": [
+          {
+            "code": "187",
+            "name": "麵包二配",
+            "qty": 6,
+            "products": [
+              {
+                "code": "0623065",
+                "name": "二配雙重芝士條",
+                "qty": 1
+              },
+              {
+                "code": "0632498",
+                "name": "二配生榛果濃可可滿餡麵包",
+                "qty": 2
+              },
+              {
+                "code": "1049111",
+                "name": "二配玄米抹茶麻吉麵包",
+                "qty": 1
+              },
+              {
+                "code": "1089014",
+                "name": "二配蕉心貘吉麵包",
+                "qty": 1
+              },
+              {
+                "code": "1870021",
+                "name": "二配紅豆麵包",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "181",
+            "name": "甜麵包",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1087517",
+                "name": "一配貘的可可排包",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "H",
+        "name": "吐司蛋糕",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-keiki.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "197",
+            "name": "吐司蛋糕二配",
+            "qty": 2,
+            "products": [
+              {
+                "code": "1077447",
+                "name": "二配小清新薄巧夾心土司",
+                "qty": 1
+              },
+              {
+                "code": "1970360",
+                "name": "星－二配醇乳香土司",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "oldPKey": "014928",
+    "name": "全家仁武仁塑店",
+    "tel": "07-3747416",
+    "post": null,
+    "city": null,
+    "areaCode": null,
+    "periodType": 0,
+    "longitude": 120.33488,
+    "latitude": 22.706448,
+    "distance": 0,
+    "address": "高雄市仁武區竹後里水管路１８１號",
+    "updateDate": "2025-05-07T21:40:01+08:00",
+    "info": [
+      {
+        "code": "A",
+        "name": "飯糰手卷",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-onigiri.svg",
+        "qty": 6,
+        "categories": [
+          {
+            "code": "061",
+            "name": "飯糰一配",
+            "qty": 4,
+            "products": [
+              {
+                "code": "0539583",
+                "name": "一配蔬食鮪魚飯糰",
+                "qty": 1
+              },
+              {
+                "code": "0613018",
+                "name": "星-一配經典肉鬆飯糰",
+                "qty": 1
+              },
+              {
+                "code": "0775379",
+                "name": "一配壹號醬炙烤牛飯糰",
+                "qty": 1
+              },
+              {
+                "code": "1086848",
+                "name": "一配秘傳麻辣鯖魚飯糰",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "065",
+            "name": "飯糰４度Ｃ",
+            "qty": 2,
+            "products": [
+              {
+                "code": "1057657",
+                "name": "大口麻婆豆腐飯糰",
+                "qty": 1
+              },
+              {
+                "code": "1076269",
+                "name": "泰式沙嗲雞肉烤飯糰",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "B",
+        "name": "飯類主食",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-obentou.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "094",
+            "name": "粥品",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0945506",
+                "name": "滑蛋干貝雞茸粥",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "093",
+            "name": "日式主食",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1036639",
+                "name": "牛丼",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "D",
+        "name": "湯品小吃",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sunakku.svg",
+        "qty": 3,
+        "categories": [
+          {
+            "code": "153",
+            "name": "湯品",
+            "qty": 3,
+            "products": [
+              {
+                "code": "0515317",
+                "name": "香菇雞燉湯",
+                "qty": 1
+              },
+              {
+                "code": "0705089",
+                "name": "星-蒸蛋湯",
+                "qty": 1
+              },
+              {
+                "code": "0816735",
+                "name": "馬鈴薯玉米濃湯",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "E",
+        "name": "三明治沙拉",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sandowicchi.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "141",
+            "name": "沙拉",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0958701",
+                "name": "海藻野菜沙拉",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "106",
+            "name": "三明治４度Ｃ",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1088745",
+                "name": "好多菜三明治",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "G",
+        "name": "麵包甜點",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-pan.svg",
+        "qty": 7,
+        "categories": [
+          {
+            "code": "182",
+            "name": "丹麥麵包",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0040786",
+                "name": "一配巧克力派司",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "181",
+            "name": "甜麵包",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0076456",
+                "name": "星-一配鹽麴蔥花麵包",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "176",
+            "name": "手工甜點",
+            "qty": 2,
+            "products": [
+              {
+                "code": "1037871",
+                "name": "草莓乳酪千層夾心",
+                "qty": 1
+              },
+              {
+                "code": "1071241",
+                "name": "阿薩姆QQ蛋糕捲",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "187",
+            "name": "麵包二配",
+            "qty": 3,
+            "products": [
+              {
+                "code": "1049111",
+                "name": "二配玄米抹茶麻吉麵包",
+                "qty": 2
+              },
+              {
+                "code": "1870162",
+                "name": "星-二配克林姆麵包",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "H",
+        "name": "吐司蛋糕",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-keiki.svg",
+        "qty": 5,
+        "categories": [
+          {
+            "code": "197",
+            "name": "吐司蛋糕二配",
+            "qty": 4,
+            "products": [
+              {
+                "code": "0640807",
+                "name": "二配醇濃黑巧鬆餅",
+                "qty": 1
+              },
+              {
+                "code": "1044739",
+                "name": "二配記憶深刻奶油土司",
+                "qty": 1
+              },
+              {
+                "code": "1970360",
+                "name": "星－二配醇乳香土司",
+                "qty": 1
+              },
+              {
+                "code": "1972017",
+                "name": "二配小麥胚芽土司",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "192",
+            "name": "蛋糕",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1069210",
+                "name": "一配抹茶甜甜圈蛋糕",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "oldPKey": "019159",
+    "name": "全家仁武五和店",
+    "tel": "07-3741557",
+    "post": null,
+    "city": null,
+    "areaCode": null,
+    "periodType": 0,
+    "longitude": 120.33404,
+    "latitude": 22.693296,
+    "distance": 0,
+    "address": "高雄市仁武區八德西路１７８５號",
+    "updateDate": "2025-05-07T21:40:01+08:00",
+    "info": [
+      {
+        "code": "A",
+        "name": "飯糰手卷",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-onigiri.svg",
+        "qty": 4,
+        "categories": [
+          {
+            "code": "061",
+            "name": "飯糰一配",
+            "qty": 3,
+            "products": [
+              {
+                "code": "0615010",
+                "name": "星-一配雞肉飯飯糰",
+                "qty": 1
+              },
+              {
+                "code": "1035629",
+                "name": "一配傳香滷肉飯飯糰(區)",
+                "qty": 1
+              },
+              {
+                "code": "1054677",
+                "name": "一配粵式玫瑰油雞飯糰",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "071",
+            "name": "壽司一配",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0895335",
+                "name": "一配日式稻荷壽司",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "C",
+        "name": "麵類主食",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-raamen.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "112",
+            "name": "熱湯麵",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0590131",
+                "name": "星-紅燒雙寶牛肉麵",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "122",
+            "name": "熱食麵",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1037485",
+                "name": "鐵板什蔬炒泡麵",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "D",
+        "name": "湯品小吃",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sunakku.svg",
+        "qty": 1,
+        "categories": [
+          {
+            "code": "155",
+            "name": "特色小吃",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1056188",
+                "name": "香濃起司白醬花椰",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "E",
+        "name": "三明治沙拉",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sandowicchi.svg",
+        "qty": 5,
+        "categories": [
+          {
+            "code": "141",
+            "name": "沙拉",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0770947",
+                "name": "星-十品目田園沙拉",
+                "qty": 1
+              },
+              {
+                "code": "0836575",
+                "name": "蕃茄蛋洋芋握沙拉",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "106",
+            "name": "三明治４度Ｃ",
+            "qty": 3,
+            "products": [
+              {
+                "code": "1036720",
+                "name": "海鹽花生可可三明治",
+                "qty": 2
+              },
+              {
+                "code": "1088763",
+                "name": "香鬆起司蛋三明治",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "F",
+        "name": "蔬果",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-ringo.svg",
+        "qty": 4,
+        "categories": [
+          {
+            "code": "131",
+            "name": "截切水果",
+            "qty": 4,
+            "products": [
+              {
+                "code": "0193046",
+                "name": "季節水果拼盤（截切）",
+                "qty": 2
+              },
+              {
+                "code": "1091209",
+                "name": "黃紅一起吃的西瓜(截切-盒)",
+                "qty": 1
+              },
+              {
+                "code": "1310556",
+                "name": "綜合水果繽紛杯",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "G",
+        "name": "麵包甜點",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-pan.svg",
+        "qty": 13,
+        "categories": [
+          {
+            "code": "181",
+            "name": "甜麵包",
+            "qty": 5,
+            "products": [
+              {
+                "code": "0076456",
+                "name": "星-一配鹽麴蔥花麵包",
+                "qty": 1
+              },
+              {
+                "code": "0829471",
+                "name": "一配藍莓乳酪軟歐",
+                "qty": 1
+              },
+              {
+                "code": "1067713",
+                "name": "一配男友力麵包",
+                "qty": 1
+              },
+              {
+                "code": "1093633",
+                "name": "一配雙莓乳酪爆擊貝果",
+                "qty": 2
+              }
+            ]
+          },
+          {
+            "code": "187",
+            "name": "麵包二配",
+            "qty": 6,
+            "products": [
+              {
+                "code": "1038318",
+                "name": "二配生藍莓草莓甜心滿餡",
+                "qty": 1
+              },
+              {
+                "code": "1049111",
+                "name": "二配玄米抹茶麻吉麵包",
+                "qty": 1
+              },
+              {
+                "code": "1870071",
+                "name": "二配海苔肉鬆沙拉麵包",
+                "qty": 2
+              },
+              {
+                "code": "1871063",
+                "name": "二配生香濃花生滿餡麵包",
+                "qty": 2
+              }
+            ]
+          },
+          {
+            "code": "176",
+            "name": "手工甜點",
+            "qty": 2,
+            "products": [
+              {
+                "code": "1071382",
+                "name": "布丁夾心蛋糕",
+                "qty": 1
+              },
+              {
+                "code": "1091695",
+                "name": "生巧克力派-白巧克力口味",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "H",
+        "name": "吐司蛋糕",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-keiki.svg",
+        "qty": 13,
+        "categories": [
+          {
+            "code": "197",
+            "name": "吐司蛋糕二配",
+            "qty": 9,
+            "products": [
+              {
+                "code": "0556725",
+                "name": "二配大納言紅豆鬆餅",
+                "qty": 1
+              },
+              {
+                "code": "0891022",
+                "name": "二配維也納奶油餐包",
+                "qty": 1
+              },
+              {
+                "code": "1045480",
+                "name": "二配一抹茶香鬆餅",
+                "qty": 1
+              },
+              {
+                "code": "1052093",
+                "name": "二配春韻抹茶夾心土司",
+                "qty": 2
+              },
+              {
+                "code": "1077447",
+                "name": "二配小清新薄巧夾心土司",
+                "qty": 1
+              },
+              {
+                "code": "1971398",
+                "name": "星-二配花生夾心土司",
+                "qty": 2
+              },
+              {
+                "code": "1971552",
+                "name": "星-二配經典蜂蜜鬆餅",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "192",
+            "name": "蛋糕",
+            "qty": 3,
+            "products": [
+              {
+                "code": "0791860",
+                "name": "一配醇黑巧克力夾心蛋糕",
+                "qty": 1
+              },
+              {
+                "code": "1049852",
+                "name": "一配抹茶奶霜蛋糕",
+                "qty": 1
+              },
+              {
+                "code": "1069210",
+                "name": "一配抹茶甜甜圈蛋糕",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "191",
+            "name": "小吐司餐包",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1087521",
+                "name": "一配醇香葡萄小土司",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "oldPKey": "021821",
+    "name": "全家仁武吉仁店",
+    "tel": "07-3747959",
+    "post": null,
+    "city": null,
+    "areaCode": null,
+    "periodType": 0,
+    "longitude": 120.34635,
+    "latitude": 22.67453,
+    "distance": 0,
+    "address": "高雄市仁武區仁孝路３３９號",
+    "updateDate": "2025-05-07T21:40:01+08:00",
+    "info": [
+      {
+        "code": "A",
+        "name": "飯糰手卷",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-onigiri.svg",
+        "qty": 1,
+        "categories": [
+          {
+            "code": "065",
+            "name": "飯糰４度Ｃ",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0943586",
+                "name": "大口宮保雞丁飯糰",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "C",
+        "name": "麵類主食",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-raamen.svg",
+        "qty": 4,
+        "categories": [
+          {
+            "code": "122",
+            "name": "熱食麵",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0707859",
+                "name": "星-炸醬炒泡麵",
+                "qty": 1
+              },
+              {
+                "code": "1054186",
+                "name": "秘傳醬汁日式炒麵",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "111",
+            "name": "涼麵",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0789570",
+                "name": "星-大滿足麻醬涼麵",
+                "qty": 1
+              },
+              {
+                "code": "0789584",
+                "name": "星-台式麻醬涼麵",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "D",
+        "name": "湯品小吃",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sunakku.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "B52",
+            "name": "烤炸物",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0204883",
+                "name": "星-黃金霸王腿條",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "153",
+            "name": "湯品",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1076182",
+                "name": "三合一味噌湯",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "E",
+        "name": "三明治沙拉",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sandowicchi.svg",
+        "qty": 4,
+        "categories": [
+          {
+            "code": "141",
+            "name": "沙拉",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0836575",
+                "name": "蕃茄蛋洋芋握沙拉",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "106",
+            "name": "三明治４度Ｃ",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0862722",
+                "name": "醬燒烤雞三明治",
+                "qty": 1
+              },
+              {
+                "code": "1088745",
+                "name": "好多菜三明治",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "107",
+            "name": "調理麵包４度Ｃ",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1070336",
+                "name": "星-豬肉起司蛋堡",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "F",
+        "name": "蔬果",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-ringo.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "131",
+            "name": "截切水果",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0193046",
+                "name": "季節水果拼盤（截切）",
+                "qty": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "G",
+        "name": "麵包甜點",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-pan.svg",
+        "qty": 6,
+        "categories": [
+          {
+            "code": "181",
+            "name": "甜麵包",
+            "qty": 4,
+            "products": [
+              {
+                "code": "0076456",
+                "name": "星-一配鹽麴蔥花麵包",
+                "qty": 1
+              },
+              {
+                "code": "0829471",
+                "name": "一配藍莓乳酪軟歐",
+                "qty": 1
+              },
+              {
+                "code": "1067713",
+                "name": "一配男友力麵包",
+                "qty": 1
+              },
+              {
+                "code": "1090144",
+                "name": "一配蘭姆葡萄維也納",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "176",
+            "name": "手工甜點",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0952987",
+                "name": "冰心乳酪條",
+                "qty": 1
+              },
+              {
+                "code": "1091077",
+                "name": "經典雙色小泡芙",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "H",
+        "name": "吐司蛋糕",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-keiki.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "192",
+            "name": "蛋糕",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0983570",
+                "name": "一配經典雪花蛋糕",
+                "qty": 1
+              },
+              {
+                "code": "1049852",
+                "name": "一配抹茶奶霜蛋糕",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "oldPKey": "022025",
+    "name": "全家仁武大道店",
+    "tel": "07-3737859",
+    "post": null,
+    "city": null,
+    "areaCode": null,
+    "periodType": 0,
+    "longitude": 120.350136,
+    "latitude": 22.692575,
+    "distance": 0,
+    "address": "高雄市仁武區鳳仁路１０６號",
+    "updateDate": "2025-05-07T21:40:01+08:00",
+    "info": [
+      {
+        "code": "C",
+        "name": "麵類主食",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-raamen.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "122",
+            "name": "熱食麵",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1037485",
+                "name": "鐵板什蔬炒泡麵",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "124",
+            "name": "義大利麵",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1059122",
+                "name": "泰式海鮮冷義大利麵",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "D",
+        "name": "湯品小吃",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sunakku.svg",
+        "qty": 5,
+        "categories": [
+          {
+            "code": "B52",
+            "name": "烤炸物",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0204924",
+                "name": "匈牙利香草烤雞翅",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "154",
+            "name": "滷味",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0753791",
+                "name": "小滷青蔬",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "155",
+            "name": "特色小吃",
+            "qty": 3,
+            "products": [
+              {
+                "code": "0888122",
+                "name": "香濃起司馬鈴薯",
+                "qty": 1
+              },
+              {
+                "code": "1092691",
+                "name": "咖哩魚蛋",
+                "qty": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "E",
+        "name": "三明治沙拉",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sandowicchi.svg",
+        "qty": 1,
+        "categories": [
+          {
+            "code": "141",
+            "name": "沙拉",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0770947",
+                "name": "星-十品目田園沙拉",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "F",
+        "name": "蔬果",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-ringo.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "131",
+            "name": "截切水果",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0155636",
+                "name": "熟成限定黃金奇異果（截切－盒）",
+                "qty": 1
+              },
+              {
+                "code": "1310615",
+                "name": "履歷木瓜（截切-盒）",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "G",
+        "name": "麵包甜點",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-pan.svg",
+        "qty": 7,
+        "categories": [
+          {
+            "code": "181",
+            "name": "甜麵包",
+            "qty": 5,
+            "products": [
+              {
+                "code": "0945338",
+                "name": "一配黃金托斯卡尼",
+                "qty": 2
+              },
+              {
+                "code": "1087517",
+                "name": "一配貘的可可排包",
+                "qty": 1
+              },
+              {
+                "code": "1090144",
+                "name": "一配蘭姆葡萄維也納",
+                "qty": 2
+              }
+            ]
+          },
+          {
+            "code": "176",
+            "name": "手工甜點",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1071287",
+                "name": "焦糖烤布蕾塔",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "183",
+            "name": "鹹麵包",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1830055",
+                "name": "一配起司火腿麵包",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "H",
+        "name": "吐司蛋糕",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-keiki.svg",
+        "qty": 7,
+        "categories": [
+          {
+            "code": "191",
+            "name": "小吐司餐包",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0891090",
+                "name": "一配琥珀楓糖小可頌",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "192",
+            "name": "蛋糕",
+            "qty": 3,
+            "products": [
+              {
+                "code": "1069210",
+                "name": "一配抹茶甜甜圈蛋糕",
+                "qty": 1
+              },
+              {
+                "code": "1089000",
+                "name": "一配胖貘胖芙可可",
+                "qty": 2
+              }
+            ]
+          },
+          {
+            "code": "195",
+            "name": "小朋友麵包",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1076300",
+                "name": "一配草莓夾心",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "197",
+            "name": "吐司蛋糕二配",
+            "qty": 2,
+            "products": [
+              {
+                "code": "1077447",
+                "name": "二配小清新薄巧夾心土司",
+                "qty": 1
+              },
+              {
+                "code": "1971520",
+                "name": "星－二配板巧克力夾心土司",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "oldPKey": "023449",
+    "name": "全家仁武永樂店",
+    "tel": "07-3739347",
+    "post": null,
+    "city": null,
+    "areaCode": null,
+    "periodType": 0,
+    "longitude": 120.33266,
+    "latitude": 22.682915,
+    "distance": 0,
+    "address": "高雄市仁武區永仁街１６５號一樓",
+    "updateDate": "2025-05-07T21:40:01+08:00",
+    "info": [
+      {
+        "code": "A",
+        "name": "飯糰手卷",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-onigiri.svg",
+        "qty": 4,
+        "categories": [
+          {
+            "code": "061",
+            "name": "飯糰一配",
+            "qty": 3,
+            "products": [
+              {
+                "code": "0613018",
+                "name": "星-一配經典肉鬆飯糰",
+                "qty": 1
+              },
+              {
+                "code": "1037403",
+                "name": "一配熟成明太子飯糰",
+                "qty": 1
+              },
+              {
+                "code": "1086848",
+                "name": "一配秘傳麻辣鯖魚飯糰",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "071",
+            "name": "壽司一配",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0895335",
+                "name": "一配日式稻荷壽司",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "B",
+        "name": "飯類主食",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-obentou.svg",
+        "qty": 4,
+        "categories": [
+          {
+            "code": "093",
+            "name": "日式主食",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0399402",
+                "name": "星-極上炙烤親子丼",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "083",
+            "name": "便當４℃",
+            "qty": 3,
+            "products": [
+              {
+                "code": "0598470",
+                "name": "新招牌腿排便當(區)",
+                "qty": 2
+              },
+              {
+                "code": "0864079",
+                "name": "經典滷肉飯",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "D",
+        "name": "湯品小吃",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sunakku.svg",
+        "qty": 1,
+        "categories": [
+          {
+            "code": "155",
+            "name": "特色小吃",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1056188",
+                "name": "香濃起司白醬花椰",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "E",
+        "name": "三明治沙拉",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sandowicchi.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "106",
+            "name": "三明治４度Ｃ",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0791147",
+                "name": "星-火腿起司蛋三明治",
+                "qty": 1
+              },
+              {
+                "code": "1088745",
+                "name": "好多菜三明治",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "G",
+        "name": "麵包甜點",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-pan.svg",
+        "qty": 20,
+        "categories": [
+          {
+            "code": "181",
+            "name": "甜麵包",
+            "qty": 4,
+            "products": [
+              {
+                "code": "0076456",
+                "name": "星-一配鹽麴蔥花麵包",
+                "qty": 1
+              },
+              {
+                "code": "0590890",
+                "name": "一配椰香葡萄麵包",
+                "qty": 1
+              },
+              {
+                "code": "1049220",
+                "name": "一配抹茶蜜桃乳酪貝果",
+                "qty": 1
+              },
+              {
+                "code": "1093633",
+                "name": "一配雙莓乳酪爆擊貝果",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "182",
+            "name": "丹麥麵包",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1070154",
+                "name": "一配藍莓乳酪丹麥",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "176",
+            "name": "手工甜點",
+            "qty": 9,
+            "products": [
+              {
+                "code": "1071237",
+                "name": "可可脆皮泡芙",
+                "qty": 2
+              },
+              {
+                "code": "1071241",
+                "name": "阿薩姆QQ蛋糕捲",
+                "qty": 1
+              },
+              {
+                "code": "1071255",
+                "name": "焙茶酥頂點心杯",
+                "qty": 2
+              },
+              {
+                "code": "1071269",
+                "name": "開心果貝殼夾心",
+                "qty": 1
+              },
+              {
+                "code": "1071382",
+                "name": "布丁夾心蛋糕",
+                "qty": 1
+              },
+              {
+                "code": "1091077",
+                "name": "經典雙色小泡芙",
+                "qty": 1
+              },
+              {
+                "code": "1101795",
+                "name": "巨泡芙",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "187",
+            "name": "麵包二配",
+            "qty": 6,
+            "products": [
+              {
+                "code": "1870021",
+                "name": "二配紅豆麵包",
+                "qty": 3
+              },
+              {
+                "code": "1870053",
+                "name": "二配草莓麵包",
+                "qty": 1
+              },
+              {
+                "code": "1870194",
+                "name": "二配奶酥麵包",
+                "qty": 1
+              },
+              {
+                "code": "1871009",
+                "name": "二配生果粒草莓滿餡麵包",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "H",
+        "name": "吐司蛋糕",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-keiki.svg",
+        "qty": 7,
+        "categories": [
+          {
+            "code": "192",
+            "name": "蛋糕",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1049852",
+                "name": "一配抹茶奶霜蛋糕",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "197",
+            "name": "吐司蛋糕二配",
+            "qty": 6,
+            "products": [
+              {
+                "code": "1070172",
+                "name": "二配莓果美玫鬆餅",
+                "qty": 3
+              },
+              {
+                "code": "1970415",
+                "name": "星－二配原味覺土司",
+                "qty": 1
+              },
+              {
+                "code": "1971398",
+                "name": "星-二配花生夾心土司",
+                "qty": 1
+              },
+              {
+                "code": "1971702",
+                "name": "二配綿柔鮮奶土司",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "oldPKey": "023581",
+    "name": "全家仁武新大灣店",
+    "tel": "07-3749873",
+    "post": null,
+    "city": null,
+    "areaCode": null,
+    "periodType": 0,
+    "longitude": 120.343506,
+    "latitude": 22.676994,
+    "distance": 0,
+    "address": "高雄市仁武區仁雄路９２－６號",
+    "updateDate": "2025-05-07T21:40:01+08:00",
+    "info": [
+      {
+        "code": "A",
+        "name": "飯糰手卷",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-onigiri.svg",
+        "qty": 6,
+        "categories": [
+          {
+            "code": "061",
+            "name": "飯糰一配",
+            "qty": 6,
+            "products": [
+              {
+                "code": "0558422",
+                "name": "一配鹽蔥燒肉飯糰",
+                "qty": 1
+              },
+              {
+                "code": "0613018",
+                "name": "星-一配經典肉鬆飯糰",
+                "qty": 1
+              },
+              {
+                "code": "1035629",
+                "name": "一配傳香滷肉飯飯糰(區)",
+                "qty": 1
+              },
+              {
+                "code": "1054677",
+                "name": "一配粵式玫瑰油雞飯糰",
+                "qty": 1
+              },
+              {
+                "code": "1067959",
+                "name": "一配泰式酸辣雞絲飯糰(區)",
+                "qty": 1
+              },
+              {
+                "code": "1086866",
+                "name": "一配柚庵燒赤魚飯糰",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "B",
+        "name": "飯類主食",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-obentou.svg",
+        "qty": 1,
+        "categories": [
+          {
+            "code": "093",
+            "name": "日式主食",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0984530",
+                "name": "蒜蒜燒豚飯",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "C",
+        "name": "麵類主食",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-raamen.svg",
+        "qty": 3,
+        "categories": [
+          {
+            "code": "112",
+            "name": "熱湯麵",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0587354",
+                "name": "赤肉羹麵",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "124",
+            "name": "義大利麵",
+            "qty": 2,
+            "products": [
+              {
+                "code": "1059122",
+                "name": "泰式海鮮冷義大利麵",
+                "qty": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "D",
+        "name": "湯品小吃",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sunakku.svg",
+        "qty": 5,
+        "categories": [
+          {
+            "code": "B52",
+            "name": "烤炸物",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0204906",
+                "name": "香辣霸王雞球",
+                "qty": 1
+              },
+              {
+                "code": "0554250",
+                "name": "海底撈麻辣雞球",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "155",
+            "name": "特色小吃",
+            "qty": 2,
+            "products": [
+              {
+                "code": "1056188",
+                "name": "香濃起司白醬花椰",
+                "qty": 1
+              },
+              {
+                "code": "1092691",
+                "name": "咖哩魚蛋",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "B51",
+            "name": "麵點",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1551015",
+                "name": "小籠湯包",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "E",
+        "name": "三明治沙拉",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sandowicchi.svg",
+        "qty": 1,
+        "categories": [
+          {
+            "code": "106",
+            "name": "三明治４度Ｃ",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1036720",
+                "name": "海鹽花生可可三明治",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "F",
+        "name": "蔬果",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-ringo.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "131",
+            "name": "截切水果",
+            "qty": 2,
+            "products": [
+              {
+                "code": "0155636",
+                "name": "熟成限定黃金奇異果（截切－盒）",
+                "qty": 1
+              },
+              {
+                "code": "0193046",
+                "name": "季節水果拼盤（截切）",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "G",
+        "name": "麵包甜點",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-pan.svg",
+        "qty": 15,
+        "categories": [
+          {
+            "code": "181",
+            "name": "甜麵包",
+            "qty": 6,
+            "products": [
+              {
+                "code": "0590890",
+                "name": "一配椰香葡萄麵包",
+                "qty": 1
+              },
+              {
+                "code": "0915705",
+                "name": "一配起司核桃軟歐",
+                "qty": 1
+              },
+              {
+                "code": "1090144",
+                "name": "一配蘭姆葡萄維也納",
+                "qty": 2
+              },
+              {
+                "code": "1093633",
+                "name": "一配雙莓乳酪爆擊貝果",
+                "qty": 2
+              }
+            ]
+          },
+          {
+            "code": "183",
+            "name": "鹹麵包",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0892428",
+                "name": "一配莫札瑞拉起司火腿貝果",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "176",
+            "name": "手工甜點",
+            "qty": 4,
+            "products": [
+              {
+                "code": "0952987",
+                "name": "冰心乳酪條",
+                "qty": 1
+              },
+              {
+                "code": "1057166",
+                "name": "抹茶千層蛋糕",
+                "qty": 1
+              },
+              {
+                "code": "1077306",
+                "name": "熊抱哥草莓風味泡芙",
+                "qty": 1
+              },
+              {
+                "code": "1091213",
+                "name": "鮮乳脆皮泡芙",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "187",
+            "name": "麵包二配",
+            "qty": 2,
+            "products": [
+              {
+                "code": "1049907",
+                "name": "二配抹茶巧克力蛋糕麵包",
+                "qty": 1
+              },
+              {
+                "code": "1089014",
+                "name": "二配蕉心貘吉麵包",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "182",
+            "name": "丹麥麵包",
+            "qty": 2,
+            "products": [
+              {
+                "code": "1070154",
+                "name": "一配藍莓乳酪丹麥",
+                "qty": 1
+              },
+              {
+                "code": "1820062",
+                "name": "一配丹麥菠蘿可頌",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "H",
+        "name": "吐司蛋糕",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-keiki.svg",
+        "qty": 7,
+        "categories": [
+          {
+            "code": "197",
+            "name": "吐司蛋糕二配",
+            "qty": 3,
+            "products": [
+              {
+                "code": "0640807",
+                "name": "二配醇濃黑巧鬆餅",
+                "qty": 1
+              },
+              {
+                "code": "0891022",
+                "name": "二配維也納奶油餐包",
+                "qty": 2
+              }
+            ]
+          },
+          {
+            "code": "192",
+            "name": "蛋糕",
+            "qty": 4,
+            "products": [
+              {
+                "code": "1049852",
+                "name": "一配抹茶奶霜蛋糕",
+                "qty": 2
+              },
+              {
+                "code": "1089000",
+                "name": "一配胖貘胖芙可可",
+                "qty": 2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "oldPKey": "023820",
+    "name": "全家仁武快樂店",
+    "tel": "07-3731735",
+    "post": null,
+    "city": null,
+    "areaCode": null,
+    "periodType": 0,
+    "longitude": 120.34742,
+    "latitude": 22.70905,
+    "distance": 0,
+    "address": "高雄市仁武區安樂一街１３５號",
+    "updateDate": "2025-05-07T21:40:01+08:00",
+    "info": [
+      {
+        "code": "A",
+        "name": "飯糰手卷",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-onigiri.svg",
+        "qty": 5,
+        "categories": [
+          {
+            "code": "061",
+            "name": "飯糰一配",
+            "qty": 5,
+            "products": [
+              {
+                "code": "0612026",
+                "name": "星-一配明太子龍蝦風味沙拉飯糰",
+                "qty": 1
+              },
+              {
+                "code": "1037403",
+                "name": "一配熟成明太子飯糰",
+                "qty": 1
+              },
+              {
+                "code": "1086848",
+                "name": "一配秘傳麻辣鯖魚飯糰",
+                "qty": 1
+              },
+              {
+                "code": "1086866",
+                "name": "一配柚庵燒赤魚飯糰",
+                "qty": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "C",
+        "name": "麵類主食",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-raamen.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "124",
+            "name": "義大利麵",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1059122",
+                "name": "泰式海鮮冷義大利麵",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "111",
+            "name": "涼麵",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1060466",
+                "name": "芝麻鰹魚烏龍冷麵",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "D",
+        "name": "湯品小吃",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-sunakku.svg",
+        "qty": 2,
+        "categories": [
+          {
+            "code": "B52",
+            "name": "烤炸物",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0204883",
+                "name": "星-黃金霸王腿條",
+                "qty": 1
+              }
+            ]
+          },
+          {
+            "code": "154",
+            "name": "滷味",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0204938",
+                "name": "沙茶香辣雞胗",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "G",
+        "name": "麵包甜點",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-pan.svg",
+        "qty": 1,
+        "categories": [
+          {
+            "code": "176",
+            "name": "手工甜點",
+            "qty": 1,
+            "products": [
+              {
+                "code": "1071382",
+                "name": "布丁夾心蛋糕",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "H",
+        "name": "吐司蛋糕",
+        "iconURL": "https://stamp.family.com.tw/MapImage/i-keiki.svg",
+        "qty": 1,
+        "categories": [
+          {
+            "code": "191",
+            "name": "小吐司餐包",
+            "qty": 1,
+            "products": [
+              {
+                "code": "0591355",
+                "name": "一配奶酥小菠蘿",
+                "qty": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
