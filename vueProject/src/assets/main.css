@@ -1,0 +1,58 @@
+@import './base.css';
+
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+  padding: 0;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+
+.body-grid {
+  display: grid;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+  grid-template-columns: auto 1fr;    /* sidebar 由 open/closed 決定 */
+  grid-template-rows: auto 1fr;       /* header 自適、高度；main 填滿 */
+  /* 3. 動態視口高度優先，fallback 到 vh */
+  min-height: 100dvh;
+  height: 100vh;
+  overflow: hidden;
+}
+.sidebar {
+  grid-area: sidebar;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+.sidebar.open { width: 300px; }       /* 展開寬度 */
+.sidebar.closed { width: 0; }         /* 收合為 0 */
+.header  {
+  grid-area: header;
+  background: #dfd; padding: 0.5em;
+}
+.main    {
+  grid-area: main;
+  position: relative;
+}
+

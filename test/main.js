@@ -17,7 +17,7 @@ async function loadHTML(selector, url) {
     const districtSelect = document.getElementById('district');
     const result         = document.getElementById('result');
   
-    const r1 = await fetch('/data/taiwan_districts.json');
+    const r1 = await fetch('./data/taiwan_districts.json');
     const data = await r1.json();
   
     data.forEach(c=>{
