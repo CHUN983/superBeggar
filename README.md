@@ -1,7 +1,3 @@
-node js環境
-npm init -y
-
-
 # Vue 3 + Vite + Leaflet 地圖專案
 
 這是一個使用 Vue 3 + Vite 建立的前端專案，整合 Leaflet 地圖，提供行政區篩選、地圖標記與全畫面響應式設計。
