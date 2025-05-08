@@ -58,6 +58,7 @@ my-map-app/
 │   │   └─ main.css                # 全域樣式檔案
 │   ├─ components/
 │   │   ├─ Sidebar.vue
+│   │   ├─ ProductList.vue
 │   │   ├─ HeaderBar.vue
 │   │   └─ MapView.vue
 │   ├─ App.vue
