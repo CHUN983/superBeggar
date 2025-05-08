@@ -15,6 +15,6 @@
   button {
     padding: 0.3em 0.6em; cursor: pointer;
   }
-  .title { font-size: 1.2em; }
+  .title { font-size: 2.0em; }
   </style>
   
