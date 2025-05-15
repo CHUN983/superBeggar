@@ -48,8 +48,8 @@
         body: JSON.stringify({
           OldPKeys: [],
           PostInfo: newZip,            // 使用選到的 zip 作為 PostInfo
-          Latitude: 0,
-          Longitude: 0,
+            Latitude: 0,
+            Longitude: 0,
           ProjectCode: '202106302'
         })                            // POST JSON 格式:contentReference[oaicite:6]{index=6}
       })

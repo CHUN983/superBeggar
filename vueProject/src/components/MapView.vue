@@ -33,6 +33,7 @@ watch(() => props.zip, async (zip) => {
       ProjectCode: '202106302'
     })
   })
+
   const json = await res.json()
   json.data.forEach(s => {                         // 加上每家店標記
     L.marker([s.latitude, s.longitude])
