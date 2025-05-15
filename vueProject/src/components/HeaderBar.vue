@@ -1,4 +1,5 @@
 <!-- src/components/HeaderBar.vue -->
+ 
 <template>
     <div class="header-bar">
       <button @click="$emit('toggleSidebar')">

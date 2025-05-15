@@ -45,7 +45,7 @@ function onDistrictChange() {
 
 <style scoped>
 .sidebar-content {
-  padding: 1em; height: 17%; overflow-y: auto; font-size: 20px;
+  padding: 1em; height: 25%; overflow-y: auto; font-size: 20px;
 }
 select { display: block; margin: .5em 0; width: 100%; font-size: 20px;}
 </style>

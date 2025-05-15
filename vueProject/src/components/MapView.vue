@@ -1,27 +1,81 @@
 <!-- src/components/MapView.vue -->
 <template>
   <div id="map" class="map-container"></div>
+  <button class="gps-button" @click="moveToGPS"> 回到我的位置</button>
 </template>
 
 <script setup>
 import { onMounted, watch } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import iconImg from '@/assets/familymart.png'
 
 const props = defineProps({ zip: String })
-let map, markersLayer
 
+let map, markersLayer, gpsMarker
+
+
+const familyIcon = L.icon({
+  iconUrl: iconImg,
+  iconSize: [40, 40],
+  iconAnchor: [20, 40],
+  popupAnchor: [0, -30]
+})
+
+// 地圖初始化與 GPS
 onMounted(() => {
   map = L.map('map').setView([22.627, 120.301], 13)
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map)
+
   markersLayer = L.layerGroup().addTo(map)
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(async position => {
+      const { latitude, longitude } = position.coords
+
+      gpsMarker = L.marker([latitude, longitude])
+        .bindPopup('<strong>你的位置</strong>')
+        .addTo(map)
+
+      map.setView([latitude, longitude], 15)
+
+      // 順便載入附近全家
+      const res = await fetch('https://stamp.family.com.tw/api/maps/MapProductInfo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          OldPKeys: [],
+          PostInfo: '',
+          Latitude: latitude,
+          Longitude: longitude,
+          ProjectCode: '202106302'
+        })
+      })
+
+      const json = await res.json()
+      markersLayer.clearLayers()
+
+      json.data.forEach(s => {
+        L.marker([s.latitude, s.longitude], { icon: familyIcon })
+          .bindPopup(`<strong>${s.name}</strong><br/>${s.address}`)
+          .addTo(markersLayer)
+      })
+    }, () => {
+      console.warn('無法取得 GPS 位置，使用預設位置。')
+    })
+  } else {
+    console.warn('此瀏覽器不支援 GPS 定位。')
+  }
 })
 
+// 查詢 zip 對應門市
 watch(() => props.zip, async (zip) => {
-  markersLayer.clearLayers()                      // 清除舊標記
+  if (!markersLayer) return
+  markersLayer.clearLayers()
   if (!zip) return
+
   const res = await fetch('https://stamp.family.com.tw/api/maps/MapProductInfo', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -35,14 +89,83 @@ watch(() => props.zip, async (zip) => {
   })
 
   const json = await res.json()
-  json.data.forEach(s => {                         // 加上每家店標記
-    L.marker([s.latitude, s.longitude])
+
+  if (json.data.length > 0) {
+    const { latitude, longitude } = json.data[0]
+    map.setView([latitude, longitude], 15)
+  }
+
+  json.data.forEach(s => {
+    L.marker([s.latitude, s.longitude], { icon: familyIcon })
       .bindPopup(`<strong>${s.name}</strong><br/>${s.address}`)
       .addTo(markersLayer)
   })
 }, { immediate: true })
+
+// 📍 回到 GPS 的位置
+const moveToGPS = async () => {
+  if (gpsMarker && map) {
+    const latlng = gpsMarker.getLatLng()
+    map.setView(latlng, 15)
+    gpsMarker.openPopup()
+
+    // 重新查詢該位置附近的全家門市
+    const res = await fetch('https://stamp.family.com.tw/api/maps/MapProductInfo', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        OldPKeys: [],
+        PostInfo: '',
+        Latitude: latlng.lat,
+        Longitude: latlng.lng,
+        ProjectCode: '202106302'
+      })
+    })
+
+    const json = await res.json()
+    markersLayer.clearLayers()
+
+    json.data.forEach(s => {
+      L.marker([s.latitude, s.longitude], { icon: familyIcon })
+        .bindPopup(`<strong>${s.name}</strong><br/>${s.address}`)
+        .addTo(markersLayer)
+    })
+
+    // 把 gpsMarker 再加回來（因為剛剛 clearLayers() 了）
+    gpsMarker.addTo(map)
+  } else {
+    alert('目前尚未取得 GPS 位置')
+  }
+}
+
 </script>
 
 <style scoped>
-.map-container { width: 100%; height: 100%; }
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+
+.gps-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+}
+
+.gps-button:hover {
+  background-color: #0c70d3;
+}
 </style>
+
+
+
