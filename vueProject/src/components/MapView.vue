@@ -2,6 +2,7 @@
 <template>
   <div id="map" class="map-container"></div>
   <button class="gps-button" @click="moveToGPS"> 回到我的位置</button>
+  <!--test-->
 </template>
 
 <script setup>
