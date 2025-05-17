@@ -1,0 +1,945 @@
+[
+  {
+    "StoreNo": "170392",
+    "StoreName": "復昌",
+    "Distance": 747.8801348299002,
+    "IsOperateTime": true,
+    "RemainingQty": 26,
+    "CategoryStockItems": [
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 6
+      },
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 17
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 3
+      }
+    ]
+  },
+  {
+    "StoreNo": "263780",
+    "StoreName": "光復",
+    "Distance": 692.2542375969674,
+    "IsOperateTime": true,
+    "RemainingQty": 22,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 11
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 6
+      },
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 2
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 3
+      }
+    ]
+  },
+  {
+    "StoreNo": "217271",
+    "StoreName": "延吉",
+    "Distance": 934.1043124511108,
+    "IsOperateTime": true,
+    "RemainingQty": 3,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 3
+      }
+    ]
+  },
+  {
+    "StoreNo": "238289",
+    "StoreName": "中興",
+    "Distance": 618.3799255066265,
+    "IsOperateTime": true,
+    "RemainingQty": 11,
+    "CategoryStockItems": [
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 3
+      },
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 1
+      },
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 6
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 1
+      }
+    ]
+  },
+  {
+    "StoreNo": "277251",
+    "StoreName": "松敬",
+    "Distance": 554.8718886291913,
+    "IsOperateTime": true,
+    "RemainingQty": 65,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 30
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 22
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 4
+      },
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 9
+      }
+    ]
+  },
+  {
+    "StoreNo": "244077",
+    "StoreName": "貿捷",
+    "Distance": 170.2214182575864,
+    "IsOperateTime": true,
+    "RemainingQty": 18,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 1
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 1
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 14
+      },
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 2
+      }
+    ]
+  },
+  {
+    "StoreNo": "214906",
+    "StoreName": "世貿",
+    "Distance": 219.81711204423232,
+    "IsOperateTime": true,
+    "RemainingQty": 19,
+    "CategoryStockItems": [
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 5
+      },
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 13
+      },
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 1
+      }
+    ]
+  },
+  {
+    "StoreNo": "215013",
+    "StoreName": "世貿二",
+    "Distance": 219.81711204423232,
+    "IsOperateTime": true,
+    "RemainingQty": 17,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 11
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 5
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 1
+      }
+    ]
+  },
+  {
+    "StoreNo": "164216",
+    "StoreName": "凱悅",
+    "Distance": 451.7499620369864,
+    "IsOperateTime": true,
+    "RemainingQty": 14,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 6
+      },
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 1
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 7
+      }
+    ]
+  },
+  {
+    "StoreNo": "151335",
+    "StoreName": "仁和",
+    "Distance": 675.8145755169386,
+    "IsOperateTime": true,
+    "RemainingQty": 0,
+    "CategoryStockItems": []
+  },
+  {
+    "StoreNo": "165987",
+    "StoreName": "國貿",
+    "Distance": 359.61979680916056,
+    "IsOperateTime": true,
+    "RemainingQty": 2,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 1
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 1
+      }
+    ]
+  },
+  {
+    "StoreNo": "265155",
+    "StoreName": "靜安",
+    "Distance": 982.4272271419613,
+    "IsOperateTime": true,
+    "RemainingQty": 25,
+    "CategoryStockItems": [
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 20
+      },
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 3
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 2
+      }
+    ]
+  },
+  {
+    "StoreNo": "266099",
+    "StoreName": "市議會",
+    "Distance": 524.4665986299677,
+    "IsOperateTime": true,
+    "RemainingQty": 13,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 11
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 2
+      }
+    ]
+  },
+  {
+    "StoreNo": "121079",
+    "StoreName": "新三連",
+    "Distance": 742.2591577665834,
+    "IsOperateTime": true,
+    "RemainingQty": 32,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 8
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 22
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 2
+      }
+    ]
+  },
+  {
+    "StoreNo": "279202",
+    "StoreName": "巨蛋",
+    "Distance": 818.3038907113042,
+    "IsOperateTime": true,
+    "RemainingQty": 10,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 5
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 3
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 2
+      }
+    ]
+  },
+  {
+    "StoreNo": "214559",
+    "StoreName": "聯合",
+    "Distance": 876.1112160059105,
+    "IsOperateTime": true,
+    "RemainingQty": 11,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 8
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 3
+      }
+    ]
+  },
+  {
+    "StoreNo": "254878",
+    "StoreName": "一零一",
+    "Distance": 90.85353344140815,
+    "IsOperateTime": true,
+    "RemainingQty": 5,
+    "CategoryStockItems": [
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 1
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 4
+      }
+    ]
+  },
+  {
+    "StoreNo": "202110",
+    "StoreName": "仁信",
+    "Distance": 355.3683498199636,
+    "IsOperateTime": true,
+    "RemainingQty": 27,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 16
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 9
+      },
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 2
+      }
+    ]
+  },
+  {
+    "StoreNo": "278586",
+    "StoreName": "微風南山",
+    "Distance": 137.28386403570275,
+    "IsOperateTime": true,
+    "RemainingQty": 16,
+    "CategoryStockItems": [
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 11
+      },
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 5
+      }
+    ]
+  },
+  {
+    "StoreNo": "216463",
+    "StoreName": "信德",
+    "Distance": 920.8452982428006,
+    "IsOperateTime": true,
+    "RemainingQty": 7,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 5
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 2
+      }
+    ]
+  },
+  {
+    "StoreNo": "213707",
+    "StoreName": "信遠",
+    "Distance": 463.3908159106722,
+    "IsOperateTime": true,
+    "RemainingQty": 5,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 4
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 1
+      }
+    ]
+  },
+  {
+    "StoreNo": "981901",
+    "StoreName": "宏泰",
+    "Distance": 525.151741660886,
+    "IsOperateTime": true,
+    "RemainingQty": 47,
+    "CategoryStockItems": [
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 1
+      },
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 22
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 21
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 3
+      }
+    ]
+  },
+  {
+    "StoreNo": "257431",
+    "StoreName": "信義新光",
+    "Distance": 568.2282140719258,
+    "IsOperateTime": true,
+    "RemainingQty": 7,
+    "CategoryStockItems": [
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 2
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 5
+      }
+    ]
+  },
+  {
+    "StoreNo": "287731",
+    "StoreName": "BBS夢廣場店",
+    "Distance": 617.8634895892852,
+    "IsOperateTime": true,
+    "RemainingQty": 0,
+    "CategoryStockItems": []
+  },
+  {
+    "StoreNo": "990721",
+    "StoreName": "市捷",
+    "Distance": 772.1331916846327,
+    "IsOperateTime": false,
+    "RemainingQty": 31,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 14
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 1
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 14
+      },
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 2
+      }
+    ]
+  },
+  {
+    "StoreNo": "135425",
+    "StoreName": "松捷",
+    "Distance": 817.2728416384215,
+    "IsOperateTime": true,
+    "RemainingQty": 1,
+    "CategoryStockItems": [
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 1
+      }
+    ]
+  },
+  {
+    "StoreNo": "277365",
+    "StoreName": "鑫國泰",
+    "Distance": 724.8113232390454,
+    "IsOperateTime": true,
+    "RemainingQty": 9,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 7
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 2
+      }
+    ]
+  },
+  {
+    "StoreNo": "214836",
+    "StoreName": "市運",
+    "Distance": 849.027483298182,
+    "IsOperateTime": false,
+    "RemainingQty": 2,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 1
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 1
+      }
+    ]
+  },
+  {
+    "StoreNo": "262019",
+    "StoreName": "忠隆",
+    "Distance": 901.8213389916905,
+    "IsOperateTime": true,
+    "RemainingQty": 0,
+    "CategoryStockItems": []
+  },
+  {
+    "StoreNo": "256379",
+    "StoreName": "信義湧高",
+    "Distance": 858.5836684161477,
+    "IsOperateTime": true,
+    "RemainingQty": 34,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 21
+      },
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 3
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 5
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 5
+      }
+    ]
+  },
+  {
+    "StoreNo": "242392",
+    "StoreName": "巨東",
+    "Distance": 930.6910317720051,
+    "IsOperateTime": true,
+    "RemainingQty": 35,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 14
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 1
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 15
+      },
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 5
+      }
+    ]
+  },
+  {
+    "StoreNo": "274735",
+    "StoreName": "松聯",
+    "Distance": 973.4166316415534,
+    "IsOperateTime": true,
+    "RemainingQty": 20,
+    "CategoryStockItems": [
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 6
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 2
+      },
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 1
+      },
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 11
+      }
+    ]
+  },
+  {
+    "StoreNo": "190330",
+    "StoreName": "必成",
+    "Distance": 954.4870974278205,
+    "IsOperateTime": true,
+    "RemainingQty": 37,
+    "CategoryStockItems": [
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 13
+      },
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 24
+      }
+    ]
+  },
+  {
+    "StoreNo": "130132",
+    "StoreName": "敦厚",
+    "Distance": 993.0028858872353,
+    "IsOperateTime": true,
+    "RemainingQty": 23,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 13
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 10
+      }
+    ]
+  },
+  {
+    "StoreNo": "248895",
+    "StoreName": "北醫大",
+    "Distance": 813.5313755081769,
+    "IsOperateTime": true,
+    "RemainingQty": 1,
+    "CategoryStockItems": [
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 1
+      }
+    ]
+  },
+  {
+    "StoreNo": "248873",
+    "StoreName": "北醫",
+    "Distance": 765.4725528679188,
+    "IsOperateTime": true,
+    "RemainingQty": 12,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 4
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 7
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 1
+      }
+    ]
+  },
+  {
+    "StoreNo": "279235",
+    "StoreName": "三興",
+    "Distance": 620.680975843976,
+    "IsOperateTime": true,
+    "RemainingQty": 10,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 7
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 3
+      }
+    ]
+  },
+  {
+    "StoreNo": "963556",
+    "StoreName": "興貿",
+    "Distance": 472.1928842354295,
+    "IsOperateTime": true,
+    "RemainingQty": 2,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 2
+      }
+    ]
+  },
+  {
+    "StoreNo": "970901",
+    "StoreName": "信醫",
+    "Distance": 929.9114592938073,
+    "IsOperateTime": true,
+    "RemainingQty": 82,
+    "CategoryStockItems": [
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 42
+      },
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 35
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 5
+      }
+    ]
+  },
+  {
+    "StoreNo": "119478",
+    "StoreName": "醫學",
+    "Distance": 764.7916431585807,
+    "IsOperateTime": true,
+    "RemainingQty": 11,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 9
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 1
+      },
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 1
+      }
+    ]
+  },
+  {
+    "StoreNo": "259183",
+    "StoreName": "莊敬路",
+    "Distance": 745.4351506444183,
+    "IsOperateTime": true,
+    "RemainingQty": 28,
+    "CategoryStockItems": [
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 4
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 15
+      },
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 9
+      }
+    ]
+  },
+  {
+    "StoreNo": "906564",
+    "StoreName": "松仁",
+    "Distance": 898.2087050946687,
+    "IsOperateTime": true,
+    "RemainingQty": 11,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 9
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 2
+      }
+    ]
+  },
+  {
+    "StoreNo": "239455",
+    "StoreName": "北府",
+    "Distance": 720.1305526263376,
+    "IsOperateTime": true,
+    "RemainingQty": 28,
+    "CategoryStockItems": [
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 18
+      },
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 5
+      },
+      {
+        "NodeID": 170,
+        "Name": "點心",
+        "RemainingQty": 1
+      },
+      {
+        "NodeID": 169,
+        "Name": "蛋糕",
+        "RemainingQty": 4
+      }
+    ]
+  },
+  {
+    "StoreNo": "174970",
+    "StoreName": "松智",
+    "Distance": 542.5775732355395,
+    "IsOperateTime": true,
+    "RemainingQty": 6,
+    "CategoryStockItems": [
+      {
+        "NodeID": 171,
+        "Name": "吐司",
+        "RemainingQty": 1
+      },
+      {
+        "NodeID": 168,
+        "Name": "麵包",
+        "RemainingQty": 5
+      }
+    ]
+  }
+]

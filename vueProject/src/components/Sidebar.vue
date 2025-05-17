@@ -4,11 +4,15 @@
     <h2>選擇地區</h2>
     <select v-model="city" @change="onCityChange">
       <option value="">請選縣市</option>
-      <option v-for="c in areas" :key="c.name" :value="c.name">{{ c.name }}</option>
+      <option v-for="c in areas" :key="c.name" :value="c.name">
+        {{ c.name }}
+      </option>
     </select>
     <select v-model="district" :disabled="!city" @change="onDistrictChange">
       <option value="">請選區域</option>
-      <option v-for="d in districts" :key="d.zip" :value="d.zip">{{ d.name }}</option>
+      <option v-for="d in districts" :key="d.zip" :value="d.zip">
+        {{ d.name }}
+      </option>
     </select>
   </div>
 </template>
@@ -16,33 +20,36 @@
 <script setup>
 import { ref, computed, onMounted, defineEmits } from 'vue'
 
-const emit = defineEmits(['update:zip'])               // 宣告將發出 update:zip 事件:contentReference[oaicite:2]{index=2}
+const emit = defineEmits(['update-selection'])
 const areas = ref([])
 const city = ref('')
 const district = ref('')
-const zip = ref('')
 
 onMounted(async () => {
-  areas.value = await (await fetch('/data/taiwan_districts.json')).json()  // 讀取縣市區域資料:contentReference[oaicite:3]{index=3}
+  areas.value = await (await fetch('/data/taiwan_districts.json')).json()
 })
 
-const districts = computed(() => {                          // 計算屬性，依 city 選項動態更新:contentReference[oaicite:4]{index=4}
+const districts = computed(() => {
   const obj = areas.value.find(c => c.name === city.value)
   return obj ? obj.districts : []
 })
 
 function onCityChange() {
   district.value = ''
-  zip.value = ''
-  emit('update:zip', '')                                   // 清空 zip 通知父層
+  // 直接告訴父層已清空
+  emit('update-selection', { zip: '', latitude: 0, longitude: 0 })
 }
 
 function onDistrictChange() {
-  zip.value = district.value
-  emit('update:zip', zip.value)                            // 選擇後發出 zip 給父層
+  const zip = district.value
+  // 找出選中的區域物件
+  const sel = districts.value.find(d => d.zip === zip)
+  const lat = sel?.latitude ?? 0
+  const lng = sel?.longitude ?? 0
+  // 發出包含 zip、latitude、longitude 的物件
+  emit('update-selection', { zip, latitude: lat, longitude: lng })
 }
 </script>
-
 <style scoped>
 .sidebar-content {
   padding: 1em; height: 25%; overflow-y: auto; font-size: 20px;

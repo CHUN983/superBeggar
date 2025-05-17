@@ -2,14 +2,15 @@
 <template>
   <div id="map" class="map-container"></div>
   <button class="gps-button" @click="moveToGPS"> 回到我的位置</button>
-  <!--test-->
 </template>
 
 <script setup>
-import { onMounted, watch } from 'vue'
+import { onMounted, watch, defineEmits } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import iconImg from '@/assets/familymart.png'
+import sevenIconImg from '@/assets/seven11.png'
+
 
 const props = defineProps({ zip: String })
 
@@ -18,6 +19,13 @@ let map, markersLayer, gpsMarker
 
 const familyIcon = L.icon({
   iconUrl: iconImg,
+  iconSize: [40, 40],
+  iconAnchor: [20, 40],
+  popupAnchor: [0, -30]
+})
+
+const sevenIcon = L.icon({
+  iconUrl: sevenIconImg,
   iconSize: [40, 40],
   iconAnchor: [20, 40],
   popupAnchor: [0, -30]
@@ -39,30 +47,12 @@ onMounted(() => {
       gpsMarker = L.marker([latitude, longitude])
         .bindPopup('<strong>你的位置</strong>')
         .addTo(map)
-
       map.setView([latitude, longitude], 15)
 
-      // 順便載入附近全家
-      const res = await fetch('https://stamp.family.com.tw/api/maps/MapProductInfo', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          OldPKeys: [],
-          PostInfo: '',
-          Latitude: latitude,
-          Longitude: longitude,
-          ProjectCode: '202106302'
-        })
-      })
+      emit('update-location', { latitude, longitude })
 
-      const json = await res.json()
-      markersLayer.clearLayers()
-
-      json.data.forEach(s => {
-        L.marker([s.latitude, s.longitude], { icon: familyIcon })
-          .bindPopup(`<strong>${s.name}</strong><br/>${s.address}`)
-          .addTo(markersLayer)
-      })
+      // 只呼叫一次
+      loadNearbyStores(latitude, longitude)
     }, () => {
       console.warn('無法取得 GPS 位置，使用預設位置。')
     })
@@ -71,36 +61,29 @@ onMounted(() => {
   }
 })
 
-// 查詢 zip 對應門市
-watch(() => props.zip, async (zip) => {
-  if (!markersLayer) return
-  markersLayer.clearLayers()
-  if (!zip) return
 
-  const res = await fetch('https://stamp.family.com.tw/api/maps/MapProductInfo', {
+
+watch(() => props.zip, async (zip) => {
+  if (!zip) return
+  // 清除 marker
+  if (markersLayer) markersLayer.clearLayers()
+
+  // 這裡你沒有 GPS，就不用傳座標
+  const res = await fetch('/api/stores', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      OldPKeys: [],
-      PostInfo: zip,
-      Latitude: 0,
-      Longitude: 0,
-      ProjectCode: '202106302'
-    })
+    body: JSON.stringify({ zip })
   })
-
   const json = await res.json()
+  showShops(json)
 
-  if (json.data.length > 0) {
-    const { latitude, longitude } = json.data[0]
+  if (json.family.length > 0) {
+    const { latitude, longitude } = json.family[0]
+    map.setView([latitude, longitude], 15)
+  } else if (json.seven.length > 0) {
+    const { latitude, longitude } = json.seven[0]
     map.setView([latitude, longitude], 15)
   }
-
-  json.data.forEach(s => {
-    L.marker([s.latitude, s.longitude], { icon: familyIcon })
-      .bindPopup(`<strong>${s.name}</strong><br/>${s.address}`)
-      .addTo(markersLayer)
-  })
 }, { immediate: true })
 
 // 📍 回到 GPS 的位置
@@ -110,34 +93,41 @@ const moveToGPS = async () => {
     map.setView(latlng, 15)
     gpsMarker.openPopup()
 
-    // 重新查詢該位置附近的全家門市
-    const res = await fetch('https://stamp.family.com.tw/api/maps/MapProductInfo', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        OldPKeys: [],
-        PostInfo: '',
-        Latitude: latlng.lat,
-        Longitude: latlng.lng,
-        ProjectCode: '202106302'
-      })
-    })
-
-    const json = await res.json()
-    markersLayer.clearLayers()
-
-    json.data.forEach(s => {
-      L.marker([s.latitude, s.longitude], { icon: familyIcon })
-        .bindPopup(`<strong>${s.name}</strong><br/>${s.address}`)
-        .addTo(markersLayer)
-    })
-
-    // 把 gpsMarker 再加回來（因為剛剛 clearLayers() 了）
-    gpsMarker.addTo(map)
+    loadNearbyStores(latlng.lat, latlng.lng)
   } else {
     alert('目前尚未取得 GPS 位置')
   }
 }
+
+
+const showShops = (json) => {
+  markersLayer.clearLayers()
+
+  json.family.forEach(s => {
+    L.marker([s.latitude, s.longitude], { icon: familyIcon })
+      .bindPopup(`<strong>${s.name}</strong><br/>${s.address}`)
+      .addTo(markersLayer)
+  })
+
+  json.seven.forEach(s => {
+    L.marker([s.latitude, s.longitude], { icon: sevenIcon })
+      .bindPopup(`<strong>${s.name}</strong><br/>${s.address}`)
+      .addTo(markersLayer)
+  })
+
+  if (gpsMarker) gpsMarker.addTo(map)
+}
+
+const loadNearbyStores = async (latitude, longitude) => {
+  const res = await fetch('/api/stores', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ zip: props.zip, latitude, longitude })
+  })
+  const json = await res.json()
+  showShops(json)
+}
+
 
 </script>
 
