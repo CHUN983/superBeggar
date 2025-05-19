@@ -1,2 +1,2 @@
 # 忽略 test 資料夾
-test/
+test/node_modules
