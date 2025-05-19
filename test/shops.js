@@ -8,9 +8,9 @@ async function main() {
   // 正確產生「依 keys 查詢」的 payload
   const payload = {
     OldPKeys: [],              // 走郵遞區號分支
-    PostInfo: '814',           // 例如 814（高雄市鼓山區）
-    Latitude: 0,
-    Longitude: 0,
+    PostInfo: '',           // 例如 814（高雄市鼓山區）
+    Latitude: 25.0418 ,
+    Longitude: 121.5485,
     ProjectCode: '202106302'
   };
   /*經緯度等電子地圖實現時使用

@@ -1,21 +1,27 @@
-<!-- src/components/MapView.vue -->
 <template>
   <div id="map" class="map-container"></div>
-  <button class="gps-button" @click="moveToGPS"> 回到我的位置</button>
+  <button class="gps-button" @click="moveToGPS">回到我的位置</button>
+  <button 
+    class="search-button" 
+    @click="searchCurrentArea"
+  >搜尋這個區域</button>
 </template>
 
 <script setup>
-import { onMounted, watch, defineEmits } from 'vue'
+import { onMounted, watch, defineEmits, ref } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import iconImg from '@/assets/familymart.png'
 import sevenIconImg from '@/assets/seven11.png'
 
-
-const props = defineProps({ zip: String })
+const props = defineProps({
+  zip: String,
+  stores: Object,
+  centerLatLng: Object, // 新增
+})
+const emit = defineEmits(['update-location', 'search-area'])
 
 let map, markersLayer, gpsMarker
-
 
 const familyIcon = L.icon({
   iconUrl: iconImg,
@@ -31,7 +37,14 @@ const sevenIcon = L.icon({
   popupAnchor: [0, -30]
 })
 
-// 地圖初始化與 GPS
+const searchCurrentArea = () => {
+  const center = map.getCenter()
+  emit('search-area', {
+    latitude: center.lat,
+    longitude: center.lng
+  })
+}
+
 onMounted(() => {
   map = L.map('map').setView([22.627, 120.301], 13)
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -41,66 +54,22 @@ onMounted(() => {
   markersLayer = L.layerGroup().addTo(map)
 
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(async position => {
+    navigator.geolocation.getCurrentPosition(position => {
       const { latitude, longitude } = position.coords
-
       gpsMarker = L.marker([latitude, longitude])
         .bindPopup('<strong>你的位置</strong>')
         .addTo(map)
       map.setView([latitude, longitude], 15)
-
       emit('update-location', { latitude, longitude })
-
-      // 只呼叫一次
-      loadNearbyStores(latitude, longitude)
     }, () => {
-      console.warn('無法取得 GPS 位置，使用預設位置。')
+      console.warn('無法取得 GPS 位置')
     })
-  } else {
-    console.warn('此瀏覽器不支援 GPS 定位。')
   }
+
 })
 
-
-
-watch(() => props.zip, async (zip) => {
-  if (!zip) return
-  // 清除 marker
-  if (markersLayer) markersLayer.clearLayers()
-
-  // 這裡你沒有 GPS，就不用傳座標
-  const res = await fetch('/api/stores', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ zip })
-  })
-  const json = await res.json()
-  showShops(json)
-
-  if (json.family.length > 0) {
-    const { latitude, longitude } = json.family[0]
-    map.setView([latitude, longitude], 15)
-  } else if (json.seven.length > 0) {
-    const { latitude, longitude } = json.seven[0]
-    map.setView([latitude, longitude], 15)
-  }
-}, { immediate: true })
-
-// 📍 回到 GPS 的位置
-const moveToGPS = async () => {
-  if (gpsMarker && map) {
-    const latlng = gpsMarker.getLatLng()
-    map.setView(latlng, 15)
-    gpsMarker.openPopup()
-
-    loadNearbyStores(latlng.lat, latlng.lng)
-  } else {
-    alert('目前尚未取得 GPS 位置')
-  }
-}
-
-
-const showShops = (json) => {
+watch(() => props.stores, (json) => {
+  if (!json || !map || !markersLayer) return
   markersLayer.clearLayers()
 
   json.family.forEach(s => {
@@ -111,24 +80,37 @@ const showShops = (json) => {
 
   json.seven.forEach(s => {
     L.marker([s.latitude, s.longitude], { icon: sevenIcon })
-      .bindPopup(`<strong>${s.name}</strong><br/>${s.address}`)
+      .bindPopup(`<strong>${s.StoreName}</strong><br/>${s.StoreAddress}`)
       .addTo(markersLayer)
   })
 
+  if (json.family.length > 0) {
+    const { latitude, longitude } = json.family[0]
+    map.setView([latitude, longitude], 15)
+  } else if (json.seven.length > 0) {
+    const { latitude, longitude } = json.seven[0]
+    map.setView([latitude, longitude], 15)
+  }
+
   if (gpsMarker) gpsMarker.addTo(map)
+}, { immediate: true })
+
+// 監聽外部要求的地圖移動（例如選擇行政區）
+watch(() => props.centerLatLng, (newCenter) => {
+  if (map && newCenter?.lat && newCenter?.lng) {
+    map.setView([newCenter.lat, newCenter.lng], 15)
+  }
+})
+
+const moveToGPS = () => {
+  if (gpsMarker && map) {
+    const latlng = gpsMarker.getLatLng()
+    map.setView(latlng, 15)
+    gpsMarker.openPopup()
+  } else {
+    alert('目前尚未取得 GPS 位置')
+  }
 }
-
-const loadNearbyStores = async (latitude, longitude) => {
-  const res = await fetch('/api/stores', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ zip: props.zip, latitude, longitude })
-  })
-  const json = await res.json()
-  showShops(json)
-}
-
-
 </script>
 
 <style scoped>
@@ -137,10 +119,8 @@ const loadNearbyStores = async (latitude, longitude) => {
   height: 100%;
 }
 
-.gps-button {
+.gps-button{
   position: absolute;
-  bottom: 20px;
-  right: 20px;
   z-index: 1000;
   background-color: #1e90ff;
   color: white;
@@ -153,10 +133,31 @@ const loadNearbyStores = async (latitude, longitude) => {
   transition: background-color 0.3s;
 }
 
-.gps-button:hover {
+.gps-button {
+  bottom: 20px;
+  right: 20px;
+}
+
+.gps-button:hover{
   background-color: #0c70d3;
 }
+
+
+.search-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.search-button:hover {
+  background-color: #218838;
+}
 </style>
-
-
-
