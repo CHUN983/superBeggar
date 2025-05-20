@@ -1,2 +1,30 @@
 # 忽略 test 資料夾
 test/node_modules
+
+# 忽略 log 檔案
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 忽略環境設定檔
+.env
+.env.local
+.env.*.local
+
+# 忽略系統檔案
+.DS_Store
+Thumbs.db
+
+# 忽略編譯輸出
+dist/
+build/
+
+# 忽略依賴安裝的目錄
+node_modules/
+
+# 忽略臨時檔案
+*.tmp
+*.swp
+*.bak
