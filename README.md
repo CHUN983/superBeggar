@@ -82,14 +82,14 @@ my-map-app/
 │       ├─ App.vue
 │       └─ main.js
 ├─ server/
-│        ├─ data/
-│        │   └─ 711_stores.json     # 7-11 門市補充資料
-│        ├─ routes/
-│        │   └─ shopRoutes.js             # 定義 /api/stores 路由
-│        ├─ services/
-│        │   ├─ seven11.js                # 7-11 API 串接邏輯
-│        │   └─ familyService.js          # 全家 API 串接邏輯
-│        └─ index.js                      # Express server 進入點
+│       ├─ data/
+│       │   └─ 711_stores.json     # 7-11 門市補充資料
+│       ├─ routes/
+│       │   └─ shopRoutes.js             # 定義 /api/stores 路
+│       ├─ services/
+│       │   ├─ seven11.js                # 7-11 API 串接邏輯
+│       │   └─ familyService.js          # 全家 API 串接邏輯
+│       └─ index.js                      # Express server 進入點
 ├─ test/
 └─ README.md
 ```
