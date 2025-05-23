@@ -7,10 +7,10 @@ import './assets/main.css'
 
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faBars, faHeart, faGear } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faHeart, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 // 加入需要的 icon
-library.add(faBars, faHeart, faGear)
+library.add(faBars, faHeart, faMagnifyingGlass)
 
 dom.watch()
 

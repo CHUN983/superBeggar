@@ -5,13 +5,13 @@
 
     </div>
     <div class="menu-item">
-      <font-awesome-icon size="3x" icon="gear" />
-      <span>設定</span>
+      <font-awesome-icon size="3x" icon="magnifying-glass" />
+      <span style="font-size: 15px;">搜尋</span>
     </div>
 
     <div class="menu-item">
       <font-awesome-icon size="3x" icon="heart" />
-      <span>我的最愛</span>
+      <span style="font-size: 15px;">我的最愛</span>
     </div>
   </div>
 </template>
@@ -42,21 +42,13 @@ button {
   cursor: pointer;
 }
 
-.menu-fixed-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 12px;
-  padding: 0.5em 0;
-  border-radius: 8px;
-}
 
 .menu-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 14px;
   padding: 0.5em 0;
   border-radius: 8px;           /* 圓角 */
   transition: background-color 0.2s ease;
