@@ -3,16 +3,10 @@
 
     <span class="title">我的超人地圖</span>
 
-    <div class="favorite-btn">
-      <button variant="ghost" @click="$emit('toggleFavoriteMode')">
-        <Heart class="mr-2" /> 我的最愛
-      </button>
-    </div>
   </div>
 </template>
 
 <script setup>
-import { Heart } from 'lucide-vue-next' // 確保你有引入這個 icon
 </script>
 
 <style scoped>
@@ -32,8 +26,4 @@ button {
   font-size: 2.0em;
 }
 
-/* 將我的最愛推到最右邊 */
-.favorite-btn {
-  margin-left: auto;
-}
 </style>
