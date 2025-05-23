@@ -1,7 +1,7 @@
 // server/routes/shopRoutes.js
 import { Router } from 'express'
 import { fetchFamilyShops } from '../services/familyService.js'
-import { fetch7iToken, fetchNearby711 } from '../services/seven11.js'
+import { getValid7iToken, fetchNearby711 } from '../services/seven11.js'
 
 const router = Router()
 
@@ -10,7 +10,7 @@ router.post('/stores', async (req, res) => {
   const { zip, latitude, longitude } = req.body
   try {
     // 1. 先取得 7-11 的 token
-    const token = await fetch7iToken()
+    const token = await getValid7iToken()
 
     // 2. 同步呼叫兩家 API
     const [family, seven] = await Promise.all([
