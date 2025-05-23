@@ -1,8 +1,5 @@
 <template>
   <div class="header-bar">
-    <button @click="$emit('toggleSidebar')">
-      {{ '☰' }}
-    </button>
 
     <span class="title">我的超人地圖</span>
 

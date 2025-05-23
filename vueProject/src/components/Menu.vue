@@ -1,13 +1,24 @@
 <template>
   <div class="menu-content">
-    <img src="@/assets/setting.svg" style="width: 36px; height: 36px;"/>
-    設定
-    <br>
-    <img src="@/assets/heart.svg" style="width: 36px; height: 36px;"/>
-    我的最愛
-    <br>
+    <div class="menu-fixed-item">
+      <button @click="$emit('toggleSidebar')">
+        <font-awesome-icon icon="bars" />
+      </button>
+    </div>
+
+
+    <div class="menu-item">
+      <font-awesome-icon size="3x" icon="gear" />
+      <span>設定</span>
+    </div>
+
+    <div class="menu-item">
+      <font-awesome-icon size="3x" icon="heart" />
+      <span>我的最愛</span>
+    </div>
   </div>
 </template>
+
 
 <script>
 
@@ -19,13 +30,46 @@
   background-color: rgb(240, 240, 240);
   padding: 1em;
   height: 100vh;
-  width: 50px;
-  overflow-y: fixed;
+  width: 100px; /* 加寬讓 icon 和文字都有空間 */
+  overflow-y: auto;
   font-size: 12px;
   display: flex;
   flex-direction: column;
-  gap: 0.5em;                   /* 每個選項間隔 */
+  gap: 1em;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
+
+button {
+  width: 5em;
+  padding: 0.6em 0em 0.6em 0em;
+  cursor: pointer;
+}
+
+.menu-fixed-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  padding: 0.5em 0;
+  border-radius: 8px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0.5em 0;
+  border-radius: 8px;           /* 圓角 */
+  transition: background-color 0.2s ease;
+}
+
+.menu-item:hover {
+  background-color: #dcdcdc;    /* 比原本的 rgb(240,240,240) 深一點 */
+}
+
+
+
 
 </style>
