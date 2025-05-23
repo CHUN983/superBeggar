@@ -1,14 +1,14 @@
 <template>
   <div class="body-grid">
     <div :class="['menu']">
-      <Menu/>
+      <Menu @toggleSidebar="sidebarOpen = !sidebarOpen" />
     </div>
     <div :class="['sidebar', sidebarOpen ? 'open' : 'closed']">
       <Sidebar @update-selection="onSelect" />
       <ProductList :stores="stores" :loading="loading" :error="error" />
     </div>
     <div class="header">
-      <HeaderBar @toggleSidebar="sidebarOpen = !sidebarOpen" />
+      <HeaderBar />
     </div>
     <div class="main">
       <MapView

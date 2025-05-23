@@ -30,20 +30,8 @@ a,
 .body-grid {
   display: grid;
   grid-template-areas:
-    "menu header header"
-    "menu sidebar main";
-  grid-template-columns: 50px 200px 1fr;  /* menu 固定150px, sidebar固定300px */
-  grid-template-rows: auto 1fr;
-  height: 100vh;
-  overflow: hidden;
-  background: #f8f8f8;
-}
-
-.body-grid {
-  display: grid;
-  grid-template-areas:
     "menu sidebar header"
-    "menu main";
+    "menu sidebar main";
   grid-template-columns: auto auto 1fr; /* menu 寬度固定，右側彈性填滿 */
   grid-template-rows: auto 1fr;
   min-height: 100vh;
@@ -54,7 +42,7 @@ a,
 
 .menu {
   grid-area: menu;
-  background-color: #ffffff;
+  background-color: rgb(240, 240, 240);
 }
 
 .sidebar {

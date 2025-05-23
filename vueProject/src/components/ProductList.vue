@@ -12,7 +12,7 @@
     <h4>7-11 即期品</h4>
     <ul>
       <li v-for="s in stores.seven" :key="s.StoreNo">
-        {{ s.StoreName }} — {{ s.StoreAddress }}
+        {{ s.StoreName }} — {{ s.address }}
       </li>
     </ul>
   </div>
