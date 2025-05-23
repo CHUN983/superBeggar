@@ -10,6 +10,10 @@ const API_BASE        = 'https://lovefood.openpoint.com.tw/LoveFood/api'
 const MID_V           = 'W0_DiF4DlgU5OeQoRswrRcaaNHMWOL7K3ra3385ocZcv-bBOWySZvoUtH6j-7pjiccl0C5h30uRUNbJXsABCKMqiekSb7tdiBNdVq8Ro5jgk6sgvhZla5iV0H3-8dZfASc7AhEm85679LIK3hxN7Sam6D0LAnYK9Lb0DZhn7xeTeksB4IsBx4Msr_VI'
 const USER_AGENT_7_11 = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36'
 
+//快取機制
+let cachedToken = null
+let tokenExpireTime = 0 // Unix timestamp (ms)
+
 /** 取得 7-Eleven API token */
 export async function fetch7iToken() {
   const url = `${API_BASE}/Auth/FrontendAuth/AccessToken?mid_v=${MID_V}`
@@ -21,6 +25,20 @@ export async function fetch7iToken() {
   const js = await res.json()
   if (!js.isSuccess) throw new Error(`7-11 API failed: ${JSON.stringify(js)}`)
   return js.element
+}
+
+export async function getValid7iToken() {
+  const now = Date.now()
+  if (cachedToken && now < tokenExpireTime - 5 * 60 * 1000) { // 提前 5 分鐘更新
+    return cachedToken
+  }
+
+  const newToken = await fetch7iToken()
+  cachedToken = newToken
+
+  // 設定預估過期時間，根據觀察大多為 2 小時
+  tokenExpireTime = now + 2 * 60 * 60 * 1000 // 2 小時
+  return newToken
 }
 
 /**
