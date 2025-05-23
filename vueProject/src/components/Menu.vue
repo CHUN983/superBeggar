@@ -2,13 +2,13 @@
   <div class="menu-content">
     <div class="menu-item" @click="$emit('toggleList')">
         <font-awesome-icon size="3x" icon="bars" />
-
+        <br>
     </div>
     <div class="menu-item">
       <font-awesome-icon size="3x" icon="gear" />
       <span>設定</span>
     </div>
-    
+
     <div class="menu-item">
       <font-awesome-icon size="3x" icon="heart" />
       <span>我的最愛</span>
@@ -27,7 +27,7 @@
   background-color: rgb(240, 240, 240);
   padding: 1em;
   height: 100vh;
-  width: 100px; /* 加寬讓 icon 和文字都有空間 */
+  width: auto; /* 加寬讓 icon 和文字都有空間 */
   overflow-y: auto;
   font-size: 12px;
   display: flex;

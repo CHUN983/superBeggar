@@ -54,9 +54,8 @@
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    max-height: 100vh;
-    padding: 1rem;
-    margin: 0;
+    height: 97vh;
+    padding: 10px; 
   }
 
   .storeBlock {
@@ -64,7 +63,7 @@
     border: 2px solid #6d6d6d;
     border-radius: 8px;
     margin: 10px 0;
-    padding: 10px;
+    padding: 5px;
     background-color: #f9f9f9;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }

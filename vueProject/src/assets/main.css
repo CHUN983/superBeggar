@@ -49,7 +49,7 @@ a,
   grid-area: productList;
   background-color: #fff;
   transition: width 0.3s ease;
-  overflow: hidden;
+  overflow: fixed;
 }
 
 .productList.open { width: 300px; }       /* 展開寬度 */
