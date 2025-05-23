@@ -27,33 +27,56 @@ a,
   }
 }
 
-
 .body-grid {
   display: grid;
   grid-template-areas:
-    "sidebar header"
-    "sidebar main";
-  grid-template-columns: auto 1fr;    /* sidebar 由 open/closed 決定 */
-  grid-template-rows: auto 1fr;       /* header 自適、高度；main 填滿 */
-  /* 3. 動態視口高度優先，fallback 到 vh */
-  min-height: 100dvh;
+    "menu header header"
+    "menu sidebar main";
+  grid-template-columns: 50px 200px 1fr;  /* menu 固定150px, sidebar固定300px */
+  grid-template-rows: auto 1fr;
   height: 100vh;
   overflow: hidden;
   background: #f8f8f8;
 }
+
+.body-grid {
+  display: grid;
+  grid-template-areas:
+    "menu sidebar header"
+    "menu main";
+  grid-template-columns: auto auto 1fr; /* menu 寬度固定，右側彈性填滿 */
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  background: #f8f8f8;
+}
+
+.menu {
+  grid-area: menu;
+  background-color: #ffffff;
+}
+
 .sidebar {
   grid-area: sidebar;
+  background-color: #fff;
   transition: width 0.3s ease;
   overflow: hidden;
 }
-.sidebar.open { width: 300px; }       /* 展開寬度 */
-.sidebar.closed { width: 0; }         /* 收合為 0 */
-.header  {
-  grid-area: header;
-  background: #dfd; padding: 0.5em;
+.sidebar.open {
+  width: 300px;
 }
-.main    {
+.sidebar.closed {
+  width: 0;
+}
+
+.header {
+  grid-area: header;
+  background: #dfd;
+  padding: 0.5em;
+}
+
+.main {
   grid-area: main;
   position: relative;
 }
-

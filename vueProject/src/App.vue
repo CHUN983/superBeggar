@@ -1,5 +1,8 @@
 <template>
   <div class="body-grid">
+    <div :class="['menu']">
+      <Menu/>
+    </div>
     <div :class="['sidebar', sidebarOpen ? 'open' : 'closed']">
       <Sidebar @update-selection="onSelect" />
       <ProductList :stores="stores" :loading="loading" :error="error" />
@@ -23,6 +26,7 @@
 
 <script setup>
 import { ref, watch } from 'vue'
+import Menu from '@/components/Menu.vue'
 import Sidebar from '@/components/Sidebar.vue'
 import HeaderBar from '@/components/HeaderBar.vue'
 import MapView from '@/components/MapView.vue'
@@ -81,7 +85,4 @@ watch([zip, userLat, userLng], async ([z, lat, lng]) => {
   }
 }, { immediate: true })
 
-
 </script>
-
-
