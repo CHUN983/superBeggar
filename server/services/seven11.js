@@ -46,8 +46,8 @@ export async function getValid7iToken() {
   const newToken = await fetch7iToken()
   cachedToken = newToken
 
-  // 預估 token 有效時間約為 2 小時
-  tokenExpireTime = now + 2 * 60 * 60 * 1000
+  // 預估 token 有效時間約為 30 分鐘
+  tokenExpireTime = now + 30 * 60 * 1000
   return newToken
 }
 
