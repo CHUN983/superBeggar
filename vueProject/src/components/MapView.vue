@@ -80,7 +80,7 @@ watch(() => props.stores, (json) => {
 
   json.seven.forEach(s => {
     L.marker([s.latitude, s.longitude], { icon: sevenIcon })
-      .bindPopup(`<strong>${s.StoreName}</strong><br/>${s.StoreAddress}`)
+      .bindPopup(`<strong>${s.StoreName}</strong><br/>${s.address}`)
       .addTo(markersLayer)
   })
 
