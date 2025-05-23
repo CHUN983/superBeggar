@@ -115,7 +115,7 @@ const moveToGPS = () => {
 
 <style scoped>
 .map-container {
-  width: 100%;
+  width: 150%;
   height: 100%;
 }
 
