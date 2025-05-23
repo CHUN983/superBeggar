@@ -16,11 +16,12 @@
 <style scoped>
 
 .menu-content {
+  background-color: rgb(240, 240, 240);
   padding: 1em;
   height: 100vh;
   width: 50px;
   overflow-y: fixed;
-  font-size: 20px;
+  font-size: 12px;
   display: flex;
   flex-direction: column;
   gap: 0.5em;                   /* 每個選項間隔 */
