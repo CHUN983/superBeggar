@@ -1,12 +1,9 @@
 <template>
   <div class="menu-content">
-    <div class="menu-fixed-item">
-      <button @click="$emit('toggleSidebar')">
-        <font-awesome-icon icon="bars" />
-      </button>
+    <div class="menu-item" @click="$emit('toggleSidebar')">
+        <font-awesome-icon size="3x" icon="bars" />
+
     </div>
-
-
     <div class="menu-item">
       <font-awesome-icon size="3x" icon="gear" />
       <span>設定</span>
