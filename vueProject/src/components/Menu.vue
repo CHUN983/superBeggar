@@ -1,50 +1,72 @@
 <template>
   <div class="menu-content">
-    <button class="handleSetting" @click="$emit('toggleSidebar')">
-      <br>
-      <img src="@/assets/bars.svg" style="width: 36px; height: 36px;"/>
-      <br>
-      
-    </button>
+    <div class="menu-item" @click="$emit('toggleSidebar')">
+        <font-awesome-icon size="3x" icon="bars" />
 
-    <button class="handleSearch" @click="goSetting">
-      <img src="@/assets/search.svg" style="width: 36px; height: 36px;"/>
-      <br>
-      搜尋
-    </button>
+    </div>
+    <div class="menu-item">
+      <font-awesome-icon size="3x" icon="gear" />
+      <span>設定</span>
+    </div>
 
-    <button class="handleFavorite" @click="goToFavorites">
-      <img src="@/assets/heart.svg" style="width: 36px; height: 36px;"/>
-      <br>
-      我的最愛
-    </button>
-    
+    <div class="menu-item">
+      <font-awesome-icon size="3x" icon="heart" />
+      <span>我的最愛</span>
+    </div>
   </div>
 </template>
 
-<script setup>
-  function handleSearch() {
-    console.log('跳轉到設定');
-  }
-  function habdleFavorites() {
-    console.log('前往我的最愛')
-  }
+
+<script>
+
 </script>
 
 <style scoped>
 
 .menu-content {
   background-color: rgb(240, 240, 240);
-  overflow-y: fixed;
+  padding: 1em;
+  height: 100vh;
+  width: 100px; /* 加寬讓 icon 和文字都有空間 */
+  overflow-y: auto;
   font-size: 12px;
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 1em;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 button {
-  border: none;
+  width: 5em;
+  padding: 0.6em 0em 0.6em 0em;
   cursor: pointer;
 }
+
+.menu-fixed-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  padding: 0.5em 0;
+  border-radius: 8px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0.5em 0;
+  border-radius: 8px;           /* 圓角 */
+  transition: background-color 0.2s ease;
+}
+
+.menu-item:hover {
+  background-color: #dcdcdc;    /* 比原本的 rgb(240,240,240) 深一點 */
+}
+
+
+
+
 </style>

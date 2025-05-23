@@ -1,9 +1,9 @@
 <template>
   <div class="body-grid">
     <div :class="['menu']">
-      <Menu @toggleSidebar="sidebarOpen = !sidebarOpen" />
+      <Menu @toggleSidebar="menuOpen = !menuOpen" />
     </div>
-    <div :class="['sidebar', sidebarOpen ? 'open' : 'closed']">
+    <div :class="['sidebar', menuOpen ? 'open' : 'closed']">
       <Sidebar @update-selection="onSelect" />
       <ProductList :stores="stores" :loading="loading" :error="error" />
     </div>
@@ -32,7 +32,7 @@ import HeaderBar from '@/components/HeaderBar.vue'
 import MapView from '@/components/MapView.vue'
 import ProductList from '@/components/ProductList.vue'
 
-const sidebarOpen = ref(true)
+const menuOpen = ref(true)
 const zip = ref('')
 const userLat = ref(0)
 const userLng = ref(0)

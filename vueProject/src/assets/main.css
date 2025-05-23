@@ -51,14 +51,9 @@ a,
   transition: width 0.3s ease;
   overflow: hidden;
 }
-.sidebar.open {
-  width: 300px;
-}
-.sidebar.closed {
-  width: 0;
-}
-
-.header {
+.sidebar.open { width: 300px; }       /* 展開寬度 */
+.sidebar.closed { width: 0; }         /* 收合為 0 */
+.header  {
   grid-area: header;
   background: #dfd;
   padding: 0.5em;
