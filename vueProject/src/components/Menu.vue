@@ -1,6 +1,6 @@
 <template>
   <div class="menu-content">
-    <div class="menu-item" @click="$emit('toggleSidebar')">
+    <div class="menu-item" @click="$emit('toggleList')">
         <font-awesome-icon size="3x" icon="bars" />
 
     </div>
@@ -8,7 +8,7 @@
       <font-awesome-icon size="3x" icon="gear" />
       <span>設定</span>
     </div>
-
+    
     <div class="menu-item">
       <font-awesome-icon size="3x" icon="heart" />
       <span>我的最愛</span>
