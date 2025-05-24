@@ -1,48 +1,55 @@
+<script setup>
+import { computed } from 'vue'
+import { defineProps } from 'vue'
+
+const props = defineProps({
+  currentSidebar: String
+})
+
+const activeIcon = computed(() => props.currentSidebar)
+</script>
+
 <template>
   <div class="menu-content">
-    <div class="menu-item" @click="$emit('toggleSidebar')">
-        <font-awesome-icon size="3x" icon="bars" />
-
+    <!-- bar（不根據 currentSidebar 判斷是否亮起） -->
+    <div class="menu-item" @click="$emit('select', 'bar')">
+      <font-awesome-icon size="3x" icon="bars" />
+      <br>
     </div>
-    <div class="menu-item">
+
+    <!-- search (乞丐內容) -->
+    <div
+      class="menu-item"
+      :class="{ active: activeIcon === 'search' }"
+      @click="$emit('select', 'search')"
+    >
+      <font-awesome-icon size="3x" icon="utensils" />
+      <span style="font-size: 15px;">乞丐內容</span>
+    </div>
+
+    <!-- location -->
+    <div
+      class="menu-item"
+      :class="{ active: activeIcon === 'location' }"
+      @click="$emit('select', 'location')"
+    >
       <font-awesome-icon size="3x" icon="magnifying-glass" />
       <span style="font-size: 15px;">搜尋</span>
     </div>
 
-    <div class="menu-item">
+    <!-- favorite（暫時先同樣用 search） -->
+    <div
+      class="menu-item"
+      :class="{ active: activeIcon === 'favorite' }"
+      @click="$emit('select', 'favorite')"
+    >
       <font-awesome-icon size="3x" icon="heart" />
       <span style="font-size: 15px;">我的最愛</span>
     </div>
   </div>
 </template>
 
-
-<script>
-
-</script>
-
 <style scoped>
-
-.menu-content {
-  background-color: rgb(240, 240, 240);
-  padding: 1em;
-  height: 100vh;
-  width: 100px; /* 加寬讓 icon 和文字都有空間 */
-  overflow-y: auto;
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-}
-
-button {
-  width: 5em;
-  padding: 0.6em 0em 0.6em 0em;
-  cursor: pointer;
-}
-
-
 .menu-item {
   display: flex;
   flex-direction: column;
@@ -50,15 +57,15 @@ button {
   cursor: pointer;
   font-size: 14px;
   padding: 0.5em 0;
-  border-radius: 8px;           /* 圓角 */
+  border-radius: 8px;
   transition: background-color 0.2s ease;
 }
 
 .menu-item:hover {
-  background-color: #dcdcdc;    /* 比原本的 rgb(240,240,240) 深一點 */
+  background-color: #dcdcdc;
 }
 
-
-
-
+.menu-item.active {
+  background-color: #c7c4c4; /* 更深的背景色 */
+}
 </style>
