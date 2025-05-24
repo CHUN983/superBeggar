@@ -31,8 +31,8 @@ a,
 .body-grid {
   display: grid;
   grid-template-areas:
-    "menu sidebar header"
-    "menu sidebar main";
+    "menu productList header"
+    "menu productList main";
   grid-template-columns: auto auto 1fr; /* menu 寬度固定，右側彈性填滿 */
   grid-template-rows: auto 1fr;
   min-height: 100vh;
@@ -43,23 +43,24 @@ a,
 
 .menu {
   grid-area: menu;
-  background-color: #ffffff;
+  background-color: rgb(240, 240, 240);
 }
 
-.sidebar {
-  grid-area: sidebar;
+.productList {
+  grid-area: productList;
   background-color: #fff;
   transition: width 0.3s ease;
-  overflow: hidden;
+  overflow: fixed;
 }
-.sidebar.open { width: 300px; }       /* 展開寬度 */
-.sidebar.closed { width: 0; }         /* 收合為 0 */
-.header  {
+
+.productList.open { width: 300px; }       /* 展開寬度 */
+.productList.closed { width: 0; }         /* 收合為 0 */
+
+.header {
   grid-area: header;
   background: #dfd;
   padding: 0.5em;
 }
-
 .main {
   grid-area: main;
   position: relative;
