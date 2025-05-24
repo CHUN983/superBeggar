@@ -1,16 +1,19 @@
 <template>
   <div v-if="stores" class="product-list">
     <div class="toggle-container">
-      <span :style="{textAlign: 'left'}">全家</span>
+      <span>全家</span>
       <div class="slider" @click="toggle">
         <div class="toggle-button" :class="{ active: !isFamilyMart }"></div>
       </div>
-      <span :style="{textAlign: 'right'}">7-11</span>
+      <span>7-11</span>
     </div>
 
     <div v-if="isFamilyMart">
+      <div v-if="stores.family.length === 0" :style="{textAlign: 'center'}">
+        <h2>目前商家沒有即期品</h2>
+      </div>
       <ul>
-        <li v-for="s in stores.family" :key="s.oldPKey" class="storeBlock">
+        <li v-for="s in sortedFamily" :key="s.oldPKey" class="storeBlock">
           {{s.name}} {{s.distance.toFixed(0)}}m
 
           <button @click="toggleFavorite({ id: s.oldPKey, name: s.name, lat: s.latitude, lng: s.longitude })">
@@ -33,9 +36,13 @@
     </div>
 
     <div v-else="">
+      <div v-if="stores.seven.length === 0" :style="{textAlign: 'center'}">
+        <h2>目前商家沒有即期品</h2>
+      </div>
       <ul>
-        <li v-for="s in stores.seven" :key="s.StoreNo" class="storeBlock">
+        <li v-for="s in sortedSeven" :key="s.StoreNo" class="storeBlock">
           7-11{{s.StoreName}}店 {{s.Distance.toFixed(0)}}m
+
           <button @click="toggleFavorite({ id: s.StoreNo, name: s.StoreName, lat: s.Latitude, lng: s.Longitude })">
             <font-awesome-icon :icon="isFavorited(s.StoreNo) ? ['fas', 'heart'] : ['far', 'heart']" />
           </button>
@@ -58,17 +65,25 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue';
-  import { useFavorites } from '@/composables/useFavorites.js'
+import { ref, computed } from 'vue';
+import { useFavorites } from '@/composables/useFavorites.js'
 
-  const isFamilyMart = ref(true);
+const isFamilyMart = ref(true);
+function toggle() {
+  isFamilyMart.value = !isFamilyMart.value;
+}
 
-  function toggle() {
-    isFamilyMart.value = !isFamilyMart.value;
-  }
+const props = defineProps({ stores: Object });
+const { toggleFavorite, isFavorited } = useFavorites()
 
-  const props = defineProps({ stores: Object })
-  const { toggleFavorite, isFavorited } = useFavorites()
+// 根據距離排序的 computed 屬性
+const sortedFamily = computed(() => {
+  return [...(props.stores.family || [])].sort((a, b) => a.distance - b.distance);
+});
+
+const sortedSeven = computed(() => {
+  return [...(props.stores.seven || [])].sort((a, b) => a.Distance - b.Distance);
+});
 </script>
 
 <style scoped>
@@ -81,8 +96,10 @@
   }
 
   .toggle-container {
-    width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
     font-size: 20px;
     font-weight:  bold;
     align-items: center;
@@ -97,7 +114,6 @@
     border-radius: 8px;
     position: relative;
     cursor: pointer;
-    align-items: center;
     transition: background-color 0.3s;
   }
 
