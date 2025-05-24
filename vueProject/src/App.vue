@@ -16,6 +16,7 @@
     </div>
     <div class="main">
       <MapView
+        ref="mapRef"
         :stores="stores"
         :zip="zip"
         :centerLatLng="{ lat: userLat, lng: userLng }"
@@ -31,12 +32,26 @@
 </template>
 
 <script setup>
-import { ref, watch, computed } from 'vue'
+import { ref, watch, computed, provide } from 'vue'
 import Menu from '@/components/Menu.vue'
 import Sidebar from '@/components/Sidebar.vue'
 import HeaderBar from '@/components/HeaderBar.vue'
 import MapView from '@/components/MapView.vue'
 import ProductList from '@/components/ProductList.vue'
+
+const mapRef = ref(null) // 🌟 用來取得 MapView 的 exposed 方法
+
+const navigateToStore = (lat, lng, name) => {
+  const mapComponent = mapRef.value
+  if (!mapComponent || !mapComponent.navigateToStore) {
+    alert('導航功能尚未就緒')
+    return
+  }
+  mapComponent.navigateToStore(lat, lng, name)
+}
+
+provide('navigateToStore', navigateToStore)
+
 
 
 const currentSidebar = ref(null)  // null / 'search' / 'favorite' / 'other'
