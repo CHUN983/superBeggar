@@ -74,24 +74,35 @@ export async function fetchNearby711(token, latitude, longitude) {
 
   const stores = js.element.StoreStockItemList || []
 
-  // 補上經緯度與地址
-  const enrichedStores = stores
-  .filter(store => (store.CategoryStockItems?.length ?? 0) > 0) // ✅ 篩選非空的即期品門市
-  .map(store => {
-    const storeNo = String(store.StoreNo)
-    const extra = storeMap[storeNo]
-    if (!extra) console.warn(`找不到門市資料：${storeNo}`)
-    return {
-      ...store,
-      longitude: extra?.X || null,
-      latitude: extra?.Y || null,
-      address: extra?.Address || '',
-      tel: extra?.Telno || ''
-    }
-  })
+  const filteredStores = stores.filter(store => (store.CategoryStockItems?.length ?? 0) > 0)
 
-  return enrichedStores
+  const detailedStores = await Promise.all(
+    filteredStores.map(async (store) => {
+      const storeNo = String(store.StoreNo)
+      const extra = storeMap[storeNo] || {}
+
+      try {
+        const detail = await fetchStoreDetail(token, latitude, longitude, storeNo)
+        return {
+          ...detail,
+          StoreNo: storeNo,
+          StoreName: store.StoreName,
+          Distance: store.Distance,
+          longitude: extra.X || null,
+          latitude: extra.Y || null,
+          address: extra.Address || '',
+          tel: extra.Telno || ''
+        }
+      } catch (e) {
+        console.warn(`無法取得 ${storeNo} 詳細資料：`, e.message)
+        return null
+      }
+    })
+  )
+
+  return detailedStores.filter(store => store !== null)
 }
+
 
 /**
  * 查詢單一門市商品明細（需要提供有效 token）
