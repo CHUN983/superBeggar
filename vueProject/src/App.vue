@@ -9,6 +9,7 @@
       :is="sidebarComponent"
       :stores="stores"
       v-if="sidebarComponent"
+      @update-selection="onSelect"
     />
   </div>
     <div class="header">
