@@ -7,7 +7,7 @@
     <div :class="['productList', currentSidebar ? 'open' : 'closed']">
     <component
       :is="sidebarComponent"
-      :stores="stores"
+      :stores="filteredStores"
       v-if="sidebarComponent"
       @update-selection="onSelect"
     />
@@ -38,6 +38,10 @@ import Sidebar from '@/components/Sidebar.vue'
 import HeaderBar from '@/components/HeaderBar.vue'
 import MapView from '@/components/MapView.vue'
 import ProductList from '@/components/ProductList.vue'
+import { useFavorites } from '@/composables/useFavorites.js'
+import Favorite from '@/components/Favorite.vue'
+
+
 
 
 const currentSidebar = ref(null)  // null / 'search' / 'favorite' / 'other'
@@ -51,6 +55,8 @@ const stores = ref({ family: [], seven: [] })
 const loading = ref(false)
 const error = ref(null)
 
+const { getAllFavorites } = useFavorites()
+
 
 const sidebarComponent = computed(() => {
   switch (currentSidebar.value) {
@@ -59,11 +65,23 @@ const sidebarComponent = computed(() => {
     case 'search':
       return ProductList
     case 'location':
-       return Sidebar
+      return Sidebar
+    case 'favorite':
+      return  Favorite 
     // case 'other':
     //   return OtherPanel
     default:
       return null
+  }
+})
+
+const filteredStores = computed(() => {
+  if (currentSidebar.value !== 'favorite') return stores.value
+
+  const favorites = getAllFavorites()
+  return {
+    family: favorites.filter(s => typeof s.oldPKey !== 'undefined'),
+    seven: favorites.filter(s => typeof s.StoreNo !== 'undefined')
   }
 })
 

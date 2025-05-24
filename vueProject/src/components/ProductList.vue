@@ -3,6 +3,10 @@
       <ul>
         <li v-for="s in stores.family" :key="s.oldPKey" class="storeBlock">
           {{s.name}}
+
+          <button @click="toggleFavorite({ id: s.oldPKey, name: s.name, lat: s.latitude, lng: s.longitude })">
+            <font-awesome-icon :icon="isFavorited(s.oldPKey) ? ['fas', 'heart'] : ['far', 'heart']" />
+          </button>
           <button @click="handleNavigation">
             導航
           </button>
@@ -21,6 +25,9 @@
       <ul>
         <li v-for="s in stores.seven" :key="s.StoreNo" class="storeBlock">
           7-11{{s.StoreName}}店
+          <button @click="toggleFavorite({ id: s.StoreNo, name: s.StoreName, lat: s.Latitude, lng: s.Longitude })">
+            <font-awesome-icon :icon="isFavorited(s.StoreNo) ? ['fas', 'heart'] : ['far', 'heart']" />
+          </button>
           <button @click="handleNavigation">
             導航
           </button>
@@ -39,9 +46,10 @@
   </template>
 
 <script setup>
-  const props = defineProps({
-    stores: Object // ✅ 傳入共用資料
-  })
+  import { useFavorites } from '@/composables/useFavorites.js'
+
+  const props = defineProps({ stores: Object })
+  const { toggleFavorite, isFavorited } = useFavorites()
 </script>
 
 <style scoped>
