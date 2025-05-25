@@ -151,12 +151,17 @@ const navigateToStore = (targetLat, targetLng, storeName) => {
       console.log(`導航完成，車程時間：${timeStr}`)
 
       setTimeout(() => {
-        const existingBtn = document.getElementById('cancelRouteFixedBtn')
-        if (!existingBtn) {
-          const btn = document.createElement('button')
-          btn.id = 'cancelRouteFixedBtn'
-          btn.textContent = '取消導航'
-          btn.style.cssText = `
+        const existingCancelBtn = document.getElementById('cancelRouteFixedBtn')
+        const existingArrow = document.getElementById('toggleRouteStepsBtn')
+
+        const routeContainer = document.querySelector('.leaflet-routing-container')
+
+        if (!existingCancelBtn && routeContainer) {
+         // ===== 「取消導航」按鈕 =====
+          const cancelBtn = document.createElement('button')
+          cancelBtn.id = 'cancelRouteFixedBtn'
+          cancelBtn.textContent = '取消導航'
+          cancelBtn.style.cssText = `
             position: absolute;
             top: 20px;
             right: 20px;
@@ -170,17 +175,50 @@ const navigateToStore = (targetLat, targetLng, storeName) => {
             box-shadow: 0 2px 6px rgba(0,0,0,0.3);
             cursor: pointer;
           `
-          btn.onclick = () => {
-            if (routingControl) {
-              map.removeControl(routingControl)
-              routingControl = null
-            }
-            map.closePopup()
-            btn.remove()
-          }
-          document.getElementById('map')?.appendChild(btn)
+        cancelBtn.onclick = () => {
+          if (routingControl) {
+            map.removeControl(routingControl)
+            routingControl = null
         }
-      }, 100)
+          map.closePopup()
+          cancelBtn.remove()
+          arrowBtn?.remove()
+        }
+    document.getElementById('map')?.appendChild(cancelBtn)
+
+    // ===== 收起箭頭按鈕（只收起步驟表格） =====
+    const arrowBtn = document.createElement('button')
+    arrowBtn.id = 'toggleRouteStepsBtn'
+    arrowBtn.textContent = '▲'
+    arrowBtn.style.cssText = `
+      display: block;
+      margin: 10px auto 0;
+      padding: 4px 12px;
+      font-size: 16px;
+      background-color: #e0e0e0;  /* 灰底 */
+      color: #333;
+      border: none;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+      cursor: pointer;
+    `
+    // 改成只收起表格（步驟列表）
+    const stepsTable = routeContainer.querySelector('.leaflet-routing-alt table')
+    let collapsed = false
+    arrowBtn.onclick = () => {
+      if (!stepsTable) return
+      collapsed = !collapsed
+      stepsTable.style.display = collapsed ? 'none' : 'table'
+      arrowBtn.textContent = collapsed ? '▼' : '▲'
+    }
+
+    // 插入到導航面板最下方
+    routeContainer.appendChild(arrowBtn)
+  }
+}, 100)
+
+
+
 
       map.setView(storeLatLng, 15)
     })
@@ -240,19 +278,20 @@ defineExpose({
   background-color: #218838;
 }
 
-.leaflet-routing-container {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  background-color: white;
-  padding: 16px;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-  z-index: 1000;
-  width: 260px;
-  max-height: 320px;
+/* 縮小步驟區域最大高度，方便滾動 */
+.leaflet-routing-alt {
+  max-height: 200px;
   overflow-y: auto;
-  font-size: 14px;
+  padding-right: 6px;
 }
+
+/* 保持導航面板 layout 正常 */
+.leaflet-routing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+
 </style>
