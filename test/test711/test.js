@@ -38,15 +38,57 @@ async function fetchStoreDetail(token, latitude, longitude, storeNo) {
   return js.element.StoreStockItem || {}
 }
 
+export async function fetchNearby711(token, latitude, longitude) {
+  const url = `${API_BASE}/Search/FrontendStoreItemStock/GetNearbyStoreList?token=${token}`
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'User-Agent': USER_AGENT_7_11,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      CurrentLocation: { Latitude: latitude, Longitude: longitude },
+      SearchLocation:  { Latitude: latitude, Longitude: longitude }
+    })
+  })
+
+  if (!res.ok) throw new Error(`7-11 NearbyStores error: ${res.status}`)
+  const js = await res.json()
+  if (!js.isSuccess) throw new Error(`7-11 API failed: ${JSON.stringify(js)}`)
+
+  const stores = js.element.StoreStockItemList || []
+
+  const filteredStores = stores.filter(store => (store.CategoryStockItems?.length ?? 0) > 0)
+
+  return filteredStores.map((store) => {
+    const storeNo = String(store.StoreNo)
+    const extra = storeMap[storeNo] || {}
+
+    return {
+      StoreNo: storeNo,
+      StoreName: store.StoreName,
+      Distance: store.Distance,
+      longitude: extra.X || null,
+      latitude: extra.Y || null,
+      address: extra.Address || '',
+      tel: extra.Telno || '',
+      type: 'seven'
+    }
+  })
+}
+
+
+
+
 // 主程式
 async function main() {
   try {
     const token = await fetch7iToken()
-    const storeNo = "214423"
     const latitude = 22.646074
     const longitude = 120.32308
-    const detail = await fetchStoreDetail(token, latitude, longitude, storeNo)
-    console.log('門市商品明細:', detail)
+
+    const nearbyStores = await fetchNearby711(token, latitude, longitude)
+    console.log('附近有庫存的 7-11 門市:', nearbyStores)
   } catch (err) {
     console.error('錯誤:', err)
   }
