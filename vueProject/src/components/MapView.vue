@@ -133,7 +133,7 @@ const navigateToStore = (targetLat, targetLng, storeName) => {
       draggableWaypoints: false,
       show: true,
       createMarker: () => null,
-      summaryTemplate: '<h2>{name}</h2>' // ✅ 只顯示 "路線" 標題，不顯示距離與時間
+      summaryTemplate: '<h2>{name}</h2><p>{distance}</p>' 
     }).addTo(map)
     routingControl.on('routesfound', function (e) {
       setTimeout(() => {
