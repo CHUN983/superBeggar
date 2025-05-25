@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { onMounted, watch, defineEmits, defineExpose, ref, provide } from 'vue'
+import { onMounted, watch, defineEmits, defineExpose } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet-routing-machine'
@@ -66,7 +66,6 @@ onMounted(() => {
     })
   }
 
-  // ✅ 地圖初始化完成，通知父元件
   emit('map-ready', map)
 
   defineExpose({
@@ -94,8 +93,8 @@ watch(() => props.stores, (json) => {
     const { latitude, longitude } = json.family[0]
     map.setView([latitude, longitude], 15)
   } else if (json.seven.length > 0) {
-    const {latitude , longitude } = json.seven[0]
-    map.setView([latitude , longitude ], 15)
+    const { latitude, longitude } = json.seven[0]
+    map.setView([latitude, longitude], 15)
   }
 
   if (gpsMarker) gpsMarker.addTo(map)
@@ -117,7 +116,6 @@ const moveToGPS = () => {
   }
 }
 
-// ✅ 提供導航功能給外部元件使用
 const navigateToStore = (targetLat, targetLng, storeName) => {
   if (!map) return
 
@@ -138,43 +136,63 @@ const navigateToStore = (targetLat, targetLng, storeName) => {
     }).addTo(map)
 
     routingControl.on('routesfound', function (e) {
-  const route = e.routes[0]
-  const totalSeconds = route.summary.totalTime
+      const route = e.routes[0]
+      const totalSeconds = route.summary.totalTime
 
-  const hours = Math.floor(totalSeconds / 3600)
-  const minutes = Math.round((totalSeconds % 3600) / 60)
+      const hours = Math.floor(totalSeconds / 3600)
+      const minutes = Math.round((totalSeconds % 3600) / 60)
 
-  let timeStr = ''
-  if (hours > 0) {
-    timeStr += `${hours} 小時 `
-  }
-  timeStr += `${minutes} 分鐘`
+      let timeStr = ''
+      if (hours > 0) {
+        timeStr += `${hours} 小時 `
+      }
+      timeStr += `${minutes} 分鐘`
 
-  const popupContent = `
-    <strong>${storeName}</strong><br/>
-    🕒 車程：${timeStr}
-  `
+      console.log(`導航完成，車程時間：${timeStr}`)
 
-  // 顯示在目的地門市 marker 旁邊
-  L.popup()
-    .setLatLng([targetLat, targetLng])
-    .setContent(popupContent)
-    .openOn(map)
-})
+      setTimeout(() => {
+        const existingBtn = document.getElementById('cancelRouteFixedBtn')
+        if (!existingBtn) {
+          const btn = document.createElement('button')
+          btn.id = 'cancelRouteFixedBtn'
+          btn.textContent = '取消導航'
+          btn.style.cssText = `
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1100;
+            padding: 6px 10px;
+            font-size: 13px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            cursor: pointer;
+          `
+          btn.onclick = () => {
+            if (routingControl) {
+              map.removeControl(routingControl)
+              routingControl = null
+            }
+            map.closePopup()
+            btn.remove()
+          }
+          document.getElementById('map')?.appendChild(btn)
+        }
+      }, 100)
 
-
-    map.setView(storeLatLng, 15)
+      map.setView(storeLatLng, 15)
+    })
   }, () => {
     alert('無法取得您的 GPS 位置')
   })
 }
 
-// MapView.vue 中移除 provide，改用 defineExpose
 defineExpose({
   getMap: () => map,
   navigateToStore
 })
-
 </script>
 
 <style scoped>
@@ -195,7 +213,6 @@ defineExpose({
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s;
-
   bottom: 20px;
   right: 20px;
 }
@@ -215,15 +232,13 @@ defineExpose({
   font-size: 14px;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-
   bottom: 20px;
-  right: 140px; /* 往左挪動，預留間距 */
+  right: 140px;
 }
 
 .search-button:hover {
   background-color: #218838;
 }
-
 
 .leaflet-routing-container {
   position: absolute;
@@ -240,5 +255,4 @@ defineExpose({
   overflow-y: auto;
   font-size: 14px;
 }
-
 </style>
