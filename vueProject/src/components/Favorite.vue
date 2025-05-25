@@ -118,7 +118,7 @@
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    height: 97vh;
+    height: 90vh;
     padding: 10px;
   }
   

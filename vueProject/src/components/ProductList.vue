@@ -145,6 +145,11 @@ const sortedSeven = computed(() => {
     padding: 5px;
     background-color: #f9f9f9;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  .storeBlock:hover {
+    background-color: #e0e0e0;
   }
 
   .categoryBlock {
