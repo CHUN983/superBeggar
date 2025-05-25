@@ -151,42 +151,46 @@ const navigateToStore = (targetLat, targetLng, storeName) => {
       console.log(`導航完成，車程時間：${timeStr}`)
 
       setTimeout(() => {
-        const existingCancelBtn = document.getElementById('cancelRouteFixedBtn')
-        const existingArrow = document.getElementById('toggleRouteStepsBtn')
+  const existingCancelBtn = document.getElementById('cancelRouteFixedBtn')
+  const existingArrow = document.getElementById('toggleRouteStepsBtn')
+  const routeContainer = document.querySelector('.leaflet-routing-container')
 
-        const routeContainer = document.querySelector('.leaflet-routing-container')
-
-        if (!existingCancelBtn && routeContainer) {
-         // ===== 「取消導航」按鈕 =====
-          const cancelBtn = document.createElement('button')
-          cancelBtn.id = 'cancelRouteFixedBtn'
-          cancelBtn.textContent = '取消導航'
-          cancelBtn.style.cssText = `
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 1100;
-            padding: 6px 10px;
-            font-size: 13px;
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-            cursor: pointer;
-          `
-        cancelBtn.onclick = () => {
-          if (routingControl) {
-            map.removeControl(routingControl)
-            routingControl = null
-        }
-          map.closePopup()
-          cancelBtn.remove()
-          arrowBtn?.remove()
-        }
+  // ===== 如果需要：新增取消導航按鈕 =====
+  if (!existingCancelBtn && routeContainer) {
+    const cancelBtn = document.createElement('button')
+    cancelBtn.id = 'cancelRouteFixedBtn'
+    cancelBtn.textContent = '取消導航'
+    cancelBtn.style.cssText = `
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1100;
+      padding: 6px 10px;
+      font-size: 13px;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      cursor: pointer;
+    `
+    cancelBtn.onclick = () => {
+      if (routingControl) {
+        map.removeControl(routingControl)
+        routingControl = null
+      }
+      map.closePopup()
+      cancelBtn.remove()
+      document.getElementById('toggleRouteStepsBtn')?.remove()
+    }
     document.getElementById('map')?.appendChild(cancelBtn)
+  }
 
-    // ===== 收起箭頭按鈕（只收起步驟表格） =====
+  // ===== 每次都重新插入收起箭頭按鈕 =====
+  if (routeContainer) {
+    // 先刪掉舊的
+    if (existingArrow) existingArrow.remove()
+
     const arrowBtn = document.createElement('button')
     arrowBtn.id = 'toggleRouteStepsBtn'
     arrowBtn.textContent = '▲'
@@ -195,14 +199,14 @@ const navigateToStore = (targetLat, targetLng, storeName) => {
       margin: 10px auto 0;
       padding: 4px 12px;
       font-size: 16px;
-      background-color: #e0e0e0;  /* 灰底 */
+      background-color: #e0e0e0;
       color: #333;
       border: none;
       border-radius: 6px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.2);
       cursor: pointer;
     `
-    // 改成只收起表格（步驟列表）
+
     const stepsTable = routeContainer.querySelector('.leaflet-routing-alt table')
     let collapsed = false
     arrowBtn.onclick = () => {
@@ -212,13 +216,9 @@ const navigateToStore = (targetLat, targetLng, storeName) => {
       arrowBtn.textContent = collapsed ? '▼' : '▲'
     }
 
-    // 插入到導航面板最下方
     routeContainer.appendChild(arrowBtn)
   }
 }, 100)
-
-
-
 
       map.setView(storeLatLng, 15)
     })
