@@ -91,7 +91,8 @@ export async function fetchNearby711(token, latitude, longitude) {
           longitude: extra.X || null,
           latitude: extra.Y || null,
           address: extra.Address || '',
-          tel: extra.Telno || ''
+          tel: extra.Telno || '',
+          type: 'seven'
         }
       } catch (e) {
         console.warn(`無法取得 ${storeNo} 詳細資料：`, e.message)

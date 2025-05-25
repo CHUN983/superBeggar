@@ -43,8 +43,8 @@ async function main() {
   try {
     const token = await fetch7iToken()
     const storeNo = "214423"
-    const latitude = 22.646074
-    const longitude = 120.32308
+    const latitude = 20
+    const longitude = 20
     const detail = await fetchStoreDetail(token, latitude, longitude, storeNo)
     console.log('門市商品明細:', detail)
   } catch (err) {

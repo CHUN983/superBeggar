@@ -4,7 +4,7 @@
         <li v-for="s in stores.family" :key="s.oldPKey" class="storeBlock">
           {{s.name}}
 
-          <button @click="toggleFavorite({ id: s.oldPKey, name: s.name, lat: s.latitude, lng: s.longitude })">
+          <button @click="toggleFavorite({ id: s.oldPKey, name: s.name, type:s.type, lat: s.latitude, lng: s.longitude })">
             <font-awesome-icon :icon="isFavorited(s.oldPKey) ? ['fas', 'heart'] : ['far', 'heart']" />
           </button>
           <button @click="handleNavigation">
@@ -25,7 +25,7 @@
       <ul>
         <li v-for="s in stores.seven" :key="s.StoreNo" class="storeBlock">
           7-11{{s.StoreName}}店
-          <button @click="toggleFavorite({ id: s.StoreNo, name: s.StoreName, lat: s.Latitude, lng: s.Longitude })">
+          <button @click="toggleFavorite({ id: s.StoreNo, name: s.StoreName,  type:s.type, lat: s.Latitude, lng: s.Longitude})">
             <font-awesome-icon :icon="isFavorited(s.StoreNo) ? ['fas', 'heart'] : ['far', 'heart']" />
           </button>
           <button @click="handleNavigation">

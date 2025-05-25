@@ -3,7 +3,7 @@ import { ref } from 'vue'
 const FAVORITE_KEY = 'favoriteStores'
 const favoriteMap = ref(new Map())
 
-// 初始化
+// 初始化：從 localStorage 還原
 try {
   const raw = JSON.parse(localStorage.getItem(FAVORITE_KEY) || '[]')
   for (const item of raw) {
@@ -18,11 +18,16 @@ function saveToStorage() {
 }
 
 export function useFavorites() {
+
   function toggleFavorite(store) {
-    if (favoriteMap.value.has(store.id)) {
-      favoriteMap.value.delete(store.id)
+    const id = store.id
+    if (favoriteMap.value.has(id)) {
+      favoriteMap.value.delete(id)
     } else {
-      favoriteMap.value.set(store.id, store)
+  
+      favoriteMap.value.set(id, {
+        ...store,
+      })
     }
     saveToStorage()
   }
