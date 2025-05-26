@@ -7,7 +7,7 @@ async function main() {
 
   // 正確產生「依 keys 查詢」的 payload
   const payload = {
-    OldPKeys: ['007084'],              // 走郵遞區號分支
+    OldPKeys: ['013375'],              // 走郵遞區號分支
     PostInfo: '',           // 例如 814（高雄市鼓山區）
     Latitude: 10 ,
     Longitude: 10,
