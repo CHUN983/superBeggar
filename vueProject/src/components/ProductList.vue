@@ -198,9 +198,17 @@ const getCategoryIconPath_f = (code) => {
 
 // 點擊商店後取得詳細資料
 async function fetchDetail(store, type) {
-  const storeNo = type === 'family' ? store.oldPKey : store.StoreNo
-  const lat = type === 'family' ? store.latitude : store.Latitude
-  const lng = type === 'family' ? store.longitude : store.Longitude
+  const storeNo = type === 'family' ? store.oldPKey : store.StoreNo;
+
+  // 若點擊的是當前選中的商店，則收回
+  if (selectedStoreDetail.value?.type === type &&
+      selectedStoreDetail.value?.storeNo === storeNo) {
+    selectedStoreDetail.value = null;
+    return;
+  }
+
+  const lat = type === 'family' ? store.latitude : store.Latitude;
+  const lng = type === 'family' ? store.longitude : store.Longitude;
 
   try {
     const res = await axios.post('/api/store-detail', {
@@ -208,24 +216,16 @@ async function fetchDetail(store, type) {
       storeNo,
       latitude: lat,
       longitude: lng,
-    })
+    });
 
     if (res.data.success) {
-      selectedStoreDetail.value = res.data.data[type]
-      selectedStoreDetail.value.type = type  // 傳遞類型資訊
+      selectedStoreDetail.value = res.data.data[type];
+      selectedStoreDetail.value.type = type;  // 傳遞類型資訊
+      selectedStoreDetail.value.storeNo = storeNo; // 新增 storeNo 用來識別
     }
   } catch (e) {
-    console.error('取得商店詳細資料失敗', e)
+    console.error('取得商店詳細資料失敗', e);
   }
-}
-
-const emit = defineEmits(['navigate-to'])
-
-function handleNavigation(store) {
-  emit('navigate-to', {
-    latitude: store.latitude,
-    longitude: store.longitude
-  })
 }
 </script> 
 
@@ -234,6 +234,7 @@ function handleNavigation(store) {
 <style scoped>
 /* 原有樣式不變 */
   .product-list {
+    position: relative;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
@@ -329,14 +330,16 @@ function handleNavigation(store) {
 
   .store-detail-panel {
     position: fixed;
-    top: 0;
-    right: 0;
-    width: 20vw;
-    height: 100vh;
+    top: 12%;
+    left: 31.5vw;
+    padding: 10px;
+    width: auto;
+    height: 80vh;
+    border-radius: 16px;
     background-color: white;
     border-left: 2px solid #ccc;
     overflow-y: auto;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 999;
+    z-index: 1001;
   }
 </style>
