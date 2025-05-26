@@ -153,7 +153,7 @@ const sevenCategoriesGrouped = computed(() => {
     '異國料理/焗烤': '其他'
   };
 
-  return props.stores.seven.map(store => {
+  const groupedStores = props.stores.seven.map(store => {
     const grouped = {};
     store.items.forEach(item => {
       const groupName = groupMap[item.name] || '其他';
@@ -170,6 +170,8 @@ const sevenCategoriesGrouped = computed(() => {
       groupedItems
     };
   });
+  
+  return groupedStores.sort((a, b) => a.Distance - b.Distance);
 });
 
 const getCategoryIconPath_7 = (name) => {
@@ -229,6 +231,15 @@ async function fetchDetail(store, type) {
   } catch (e) {
     console.error('取得商店詳細資料失敗', e);
   }
+}
+
+const emit = defineEmits(['navigate-to'])
+
+function handleNavigation(store) {
+  emit('navigate-to', {
+    latitude: store.latitude,
+    longitude: store.longitude
+  })
 }
 </script> 
 
