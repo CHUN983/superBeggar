@@ -1,7 +1,7 @@
 <template>
   <div class="header-bar">
 
-    <span class="title">我的超人地圖</span>
+    <span class="title">乞丐超人地圖</span>
 
   </div>
 </template>

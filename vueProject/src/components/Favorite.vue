@@ -105,7 +105,16 @@
     }
 
   
-  onMounted(loadDetails)
+    console.log("pass before onMounted")
+   
+    onMounted(() => {
+      console.log('FavoritesList onMounted 執行')
+      try {
+        loadDetails()
+      } catch (e) {
+        console.error('loadDetails 發生錯誤', e)
+      }
+    })
   </script>
   
   <style scoped>
