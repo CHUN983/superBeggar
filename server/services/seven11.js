@@ -121,5 +121,17 @@ export async function fetchStoreDetail(token, latitude, longitude, storeNo) {
   const js = await res.json()
   if (!js.isSuccess) throw new Error(`7-11 API failed: ${JSON.stringify(js)}`)
 
-  return js.element.StoreStockItem || {}
+  const rawItems = js.element.StoreStockItem
+  const items = Array.isArray(rawItems) ? rawItems : rawItems ? [rawItems] : []
+  const extra = storeMap[String(storeNo)] || {}
+
+  return {
+    StoreNo: storeNo,
+    address: extra.Address || '',
+    tel: extra.Telno || '',
+    longitude: extra.X || null,
+    latitude: extra.Y || null,
+    rawItems,
+    type: 'seven'
+  }
 }

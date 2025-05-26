@@ -131,6 +131,7 @@ async function fetchDetail(store, type) {
       latitude: lat,
       longitude: lng,
     })
+    console.log("res.data:", res.data)
 
     if (res.data.success) {
       selectedStoreDetail.value = res.data.data[type]
