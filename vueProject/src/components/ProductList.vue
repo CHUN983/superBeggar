@@ -180,6 +180,7 @@ const getCategoryIconPath_7 = (name) => {
   if( name === '三明治堡類' )  return new URL('@/assets/icons/sandwich.svg', import.meta.url).href
   if( name === '生鮮蔬果' )  return new URL('@/assets/icons/banana.svg', import.meta.url).href
   if( name === '麵包蛋糕' )  return new URL('@/assets/icons/bread.svg', import.meta.url).href
+  if( name === '沙拉' )  return new URL('@/assets/icons/salad.svg', import.meta.url).href
   if( name === '甜點' )  return new URL('@/assets/icons/cake.svg', import.meta.url).href
   return new URL('@/assets/icons/other.svg', import.meta.url).href
 }
