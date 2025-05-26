@@ -59,9 +59,9 @@
           </button>
           <br>
           <ul class="categoryList">
-            <li v-for="k in s.CategoryStockItems" :key="k.NodeID" class="categoryBlock">
-              <span>{{k.Name}}</span>
-              <span>{{k.RemainingQty}}</span>
+            <li v-for="k in s.items" :key="k.code" class="categoryBlock">
+              <span>{{k.name}}</span>
+              <span>{{k.qty}}</span>
             </li>
           </ul>
         </li>
