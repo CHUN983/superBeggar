@@ -1,0 +1,41 @@
+[33m4227ecd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mhihi[m[33m, [m[1;31morigin/hihi[m[33m)[m HEAD@{0}: checkout: moving from sunthing to hihi
+[33m6ae9f83[m[33m ([m[1;31morigin/sunthing[m[33m, [m[1;32msunthing[m[33m)[m HEAD@{1}: commit: 123
+[33m56b6c4b[m HEAD@{2}: pull --tags origin sunthing: Fast-forward
+[33m11a0ba7[m HEAD@{3}: checkout: moving from hihi to sunthing
+[33m4227ecd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mhihi[m[33m, [m[1;31morigin/hihi[m[33m)[m HEAD@{4}: commit: hihihi
+[33mea170d4[m HEAD@{5}: pull --tags origin hihi: Merge made by the 'ort' strategy.
+[33m9e63385[m HEAD@{6}: commit: hi
+[33m5a3a293[m HEAD@{7}: pull --tags origin hihi: Merge made by the 'ort' strategy.
+[33m007771b[m HEAD@{8}: commit: 拉得更改版
+[33mb93d287[m HEAD@{9}: commit: 拉拉
+[33m9549e95[m HEAD@{10}: commit: hihi
+[33m9ef6860[m HEAD@{11}: commit: hihi
+[33m8525f39[m HEAD@{12}: checkout: moving from main to hihi
+[33m7d2e323[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{13}: checkout: moving from hihi to main
+[33m8525f39[m HEAD@{14}: checkout: moving from main to hihi
+[33m7d2e323[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{15}: checkout: moving from hihi to main
+[33m8525f39[m HEAD@{16}: checkout: moving from sunthing to hihi
+[33m11a0ba7[m HEAD@{17}: checkout: moving from hihi to sunthing
+[33m8525f39[m HEAD@{18}: checkout: moving from 11a0ba74a326bb8c4d2e6abf6e7716a2d8941219 to hihi
+[33m11a0ba7[m HEAD@{19}: checkout: moving from sunthing to origin/sunthing
+[33m11a0ba7[m HEAD@{20}: checkout: moving from hihi to sunthing
+[33m8525f39[m HEAD@{21}: commit (merge): Merge branch 'main' into hihi
+[33m3923b16[m HEAD@{22}: checkout: moving from main to hihi
+[33m7d2e323[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{23}: pull --tags origin main: Merge made by the 'ort' strategy.
+[33m659f5d1[m HEAD@{24}: commit: test
+[33m11a0ba7[m HEAD@{25}: checkout: moving from hihi to main
+[33m3923b16[m HEAD@{26}: checkout: moving from sunthing to hihi
+[33m11a0ba7[m HEAD@{27}: checkout: moving from hihi to sunthing
+[33m3923b16[m HEAD@{28}: checkout: moving from main to hihi
+[33m11a0ba7[m HEAD@{29}: checkout: moving from hihi to main
+[33m3923b16[m HEAD@{30}: commit (merge): Merge branch 'shih' into hihi
+[33m11a0ba7[m HEAD@{31}: checkout: moving from 11a0ba74a326bb8c4d2e6abf6e7716a2d8941219 to hihi
+[33m11a0ba7[m HEAD@{32}: checkout: moving from main to origin/main
+[33m11a0ba7[m HEAD@{33}: checkout: moving from 11a0ba74a326bb8c4d2e6abf6e7716a2d8941219 to main
+[33m11a0ba7[m HEAD@{34}: checkout: moving from main to origin/main
+[33m11a0ba7[m HEAD@{35}: checkout: moving from shih to main
+[33m49b8276[m[33m ([m[1;32mshih[m[33m)[m HEAD@{36}: checkout: moving from hihi to shih
+[33m11a0ba7[m HEAD@{37}: checkout: moving from main to hihi
+[33m11a0ba7[m HEAD@{38}: checkout: moving from hihi to main
+[33m11a0ba7[m HEAD@{39}: checkout: moving from main to hihi
+[33m11a0ba7[m HEAD@{40}: clone: from https://github.com/CHUN983/superBeggar.git
