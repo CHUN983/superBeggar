@@ -26,9 +26,14 @@
             詳細資料
           </button>
           <br>
-          <ul>
+          <ul class="categoryList">
             <li v-for="k in s.info" :key="k.code" class="categoryBlock">
-              {{k.name}} — {{k.qty}}
+              <img
+                  :src="getCategoryIconPath(k.code)"
+                  class="categoryIcon"
+              />
+              <span>{{k.name}}</span>
+              <span>{{k.qty}}</span>
             </li>
           </ul>
         </li>
@@ -53,9 +58,10 @@
             詳細資料
           </button>
           <br>
-          <ul>
+          <ul class="categoryList">
             <li v-for="k in s.CategoryStockItems" :key="k.NodeID" class="categoryBlock">
-              {{k.Name}} — {{k.RemainingQty}}
+              <span>{{k.Name}}</span>
+              <span>{{k.RemainingQty}}</span>
             </li>
           </ul>
         </li>
@@ -84,7 +90,18 @@ const sortedFamily = computed(() => {
 const sortedSeven = computed(() => {
   return [...(props.stores.seven || [])].sort((a, b) => a.Distance - b.Distance);
 });
-</script>
+
+const getCategoryIconPath = (code) => {
+  if( code === 'A' )  return new URL('@/assets/icons/rice-ball.svg', import.meta.url).href
+  if( code === 'B' )  return new URL('@/assets/icons/bento.svg', import.meta.url).href
+  if( code === 'C' )  return new URL('@/assets/icons/noodles.svg', import.meta.url).href
+  if( code === 'D' )  return new URL('@/assets/icons/soup.svg', import.meta.url).href
+  if( code === 'E' )  return new URL('@/assets/icons/sandwich.svg', import.meta.url).href
+  if( code === 'F' )  return new URL('@/assets/icons/banana.svg', import.meta.url).href
+  if( code === 'G' )  return new URL('@/assets/icons/bread.svg', import.meta.url).href
+  return new URL('@/assets/icons/pudding.svg', import.meta.url).href
+}
+</script> 
 
 <style scoped>
   .product-list {
@@ -145,14 +162,37 @@ const sortedSeven = computed(() => {
     padding: 5px;
     background-color: #f9f9f9;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
   }
 
-  .storeBlock:hover {
-    background-color: #e0e0e0;
+  .categoryList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 一行四格 */
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 12px;
   }
 
   .categoryBlock {
     list-style: none;
+    border: 1px solid #888;
+    border-radius: 8px;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .categoryBlock:hover {
+    background-color: #e0e0e0;
+  }
+
+  .categoryIcon {
+    width: 24px;
+    height: 24px;
+    margin: 0 auto 4px;
   }
 </style>
