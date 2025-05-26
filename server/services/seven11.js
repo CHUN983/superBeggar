@@ -73,35 +73,30 @@ export async function fetchNearby711(token, latitude, longitude) {
   if (!js.isSuccess) throw new Error(`7-11 API failed: ${JSON.stringify(js)}`)
 
   const stores = js.element.StoreStockItemList || []
-
   const filteredStores = stores.filter(store => (store.CategoryStockItems?.length ?? 0) > 0)
 
-  const detailedStores = await Promise.all(
-    filteredStores.map(async (store) => {
-      const storeNo = String(store.StoreNo)
-      const extra = storeMap[storeNo] || {}
+  const detailedStores = filteredStores.map(store => {
+    const storeNo = String(store.StoreNo)
+    const extra = storeMap[storeNo] || {}
 
-      try {
-        const detail = await fetchStoreDetail(token, latitude, longitude, storeNo)
-        return {
-          ...detail,
-          StoreNo: storeNo,
-          StoreName: store.StoreName,
-          Distance: store.Distance,
-          longitude: extra.X || null,
-          latitude: extra.Y || null,
-          address: extra.Address || '',
-          tel: extra.Telno || '',
-          type: 'seven'
-        }
-      } catch (e) {
-        console.warn(`無法取得 ${storeNo} 詳細資料：`, e.message)
-        return null
-      }
-    })
-  )
+    return {
+      StoreNo: storeNo,
+      StoreName: store.StoreName,
+      Distance: store.Distance,
+      longitude: extra.X || null,
+      latitude: extra.Y || null,
+      address: extra.Address || '',
+      tel: extra.Telno || '',
+      items: store.CategoryStockItems.map(k => ({
+        name: k.Name,
+        qty: k.RemainingQty,
+        code: k.NodeID
+      })),
+      type: 'seven'
+    }
+  })
 
-  return detailedStores.filter(store => store !== null)
+  return detailedStores
 }
 
 
