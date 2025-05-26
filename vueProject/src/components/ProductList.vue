@@ -49,7 +49,7 @@
         <h2>目前商家沒有即期品</h2>
       </div>
       <ul>
-        <li v-for="s in sevenCategoriesGrouped" :key="s.StoreNo" class="storeBlock">
+        <li v-for="s in sevenCategoriesGrouped" :key="s.StoreNo" class="storeBlock" @click="fetchDetail(s, 'seven')">
           7-11{{s.StoreName}}店 {{s.Distance.toFixed(0)}}m
 
           <button @click="toggleFavorite({ id: s.StoreNo, name: s.StoreName,  type:s.type, lat: s.Latitude, lng: s.Longitude})">
@@ -207,6 +207,8 @@ async function fetchDetail(store, type) {
     return;
   }
 
+  console.log(type)
+
   const lat = type === 'family' ? store.latitude : store.Latitude;
   const lng = type === 'family' ? store.longitude : store.Longitude;
 
@@ -218,6 +220,7 @@ async function fetchDetail(store, type) {
       longitude: lng,
     });
 
+    console.log(res.data)
     if (res.data.success) {
       selectedStoreDetail.value = res.data.data[type];
       selectedStoreDetail.value.type = type;  // 傳遞類型資訊

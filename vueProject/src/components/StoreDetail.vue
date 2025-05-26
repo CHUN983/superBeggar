@@ -1,8 +1,6 @@
 <template>
   <div class="store-detail">
 
-
-
     <!-- 全家格式 -->
     <template v-if="detail.type === 'family'">
       <h2>{{ detail.name }}</h2>
@@ -20,7 +18,7 @@
 
     <!-- 7-11 格式 -->
     <template v-else-if="detail.type === 'seven'">
-      <h2>711 - {{ detail.StoreName }}店</h2>
+      <h2>711 - {{ detail.rawItems.StoreName }}店</h2>
       <p>{{ detail.address }}</p>
       <p>電話：{{ detail.tel }}</p>
       <div v-for="category in detail.rawItems.CategoryStockItems" :key="category.NodeID">
