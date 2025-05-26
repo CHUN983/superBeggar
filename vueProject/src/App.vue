@@ -10,6 +10,7 @@
       :stores="filteredStores"
       v-if="sidebarComponent"
       @update-selection="onSelect"
+      @navigate-to="navigationTarget = $event"  
     />
   </div>
     <div class="header">
@@ -20,6 +21,7 @@
         :stores="stores"
         :zip="zip"
         :centerLatLng="{ lat: userLat, lng: userLng }"
+        :navigationTarget="navigationTarget"
         @update-location="handleUpdateLocation"
         @search-area="onSearchArea"
         @toggleList="ListOpen = !ListOpen" 
@@ -50,6 +52,7 @@ const isSearchOpen = ref(false) // 控制是否顯示 ProductList
 const zip = ref('')
 const userLat = ref(0)
 const userLng = ref(0)
+const navigationTarget = ref(null)
 
 const stores = ref({ family: [], seven: [] })
 const loading = ref(false)

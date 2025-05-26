@@ -26,7 +26,7 @@
           <button @click="toggleFavorite({ id: s.oldPKey, name: s.name, type:s.type, lat: s.latitude, lng: s.longitude })">
             <font-awesome-icon :icon="isFavorited(s.oldPKey) ? ['fas', 'heart'] : ['far', 'heart']" />
           </button>
-          <button @click="handleNavigation">
+          <button @click="handleNavigation(s)">
             導航
           </button>
           <br>
@@ -61,7 +61,7 @@
           <button @click="toggleFavorite({ id: s.StoreNo, name: s.StoreName,  type:s.type, lat: s.Latitude, lng: s.Longitude})">
             <font-awesome-icon :icon="isFavorited(s.StoreNo) ? ['fas', 'heart'] : ['far', 'heart']" />
           </button>
-          <button @click="handleNavigation">
+          <button @click="handleNavigation(s)">
             導航
           </button>
           <br>
@@ -140,7 +140,18 @@ async function fetchDetail(store, type) {
     console.error('取得商店詳細資料失敗', e)
   }
 }
+
+const emit = defineEmits(['navigate-to'])
+
+function handleNavigation(store) {
+  emit('navigate-to', {
+    latitude: store.latitude,
+    longitude: store.longitude
+  })
+}
 </script> 
+
+
 
 <style scoped>
   .product-list {
