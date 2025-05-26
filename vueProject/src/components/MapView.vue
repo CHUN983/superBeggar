@@ -1,26 +1,43 @@
 <template>
   <div id="map" class="map-container"></div>
+
+  <!-- 右下角按鈕 -->
   <button class="gps-button" @click="moveToGPS">回到我的位置</button>
   <button class="search-button" @click="searchCurrentArea">搜尋這個區域</button>
+
+  <!-- 導航取消按鈕（使用同 gps-button 樣式） -->
+  <button v-if="routingControl" class="gps-button cancel-button" @click="cancelNavigation">
+    取消導航
+  </button>
 </template>
 
 <script setup>
-import { onMounted, watch, defineEmits, defineExpose } from 'vue'
+import { onMounted, watch, defineEmits, ref, onBeforeUnmount } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet-routing-machine'
-import 'leaflet-routing-machine/dist/leaflet-routing-machine.css'
 import iconImg from '@/assets/familymart.png'
 import sevenIconImg from '@/assets/seven11.png'
+const redIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-shadow.png',
+  shadowSize: [41, 41]
+})
 
 const props = defineProps({
   zip: String,
   stores: Object,
-  centerLatLng: Object
+  centerLatLng: Object,
+  navigationTarget: Object
 })
 const emit = defineEmits(['update-location', 'search-area', 'map-ready'])
 
-let map, markersLayer, gpsMarker, routingControl
+let map, markersLayer, gpsMarker, destinationMarker = null
+let currentNavigatedMarker = null
+const routingControl = ref(null)
 
 const familyIcon = L.icon({
   iconUrl: iconImg,
@@ -65,12 +82,6 @@ onMounted(() => {
       console.warn('無法取得 GPS 位置')
     })
   }
-
-  emit('map-ready', map)
-
-  defineExpose({
-    getMap: () => map
-  })
 })
 
 watch(() => props.stores, (json) => {
@@ -106,6 +117,45 @@ watch(() => props.centerLatLng, (newCenter) => {
   }
 })
 
+watch(() => props.navigationTarget, (target) => {
+  if (!target || !map || !gpsMarker) return
+
+  const from = gpsMarker.getLatLng()
+  const to = L.latLng(target.latitude, target.longitude)
+
+  // 移除舊的路線
+  if (routingControl.value) {
+    map.removeControl(routingControl.value)
+    routingControl.value = null
+  }
+
+  // 還原上次導航的 marker 圖示
+  if (currentNavigatedMarker && currentNavigatedMarker.originalIcon) {
+    currentNavigatedMarker.setIcon(currentNavigatedMarker.originalIcon)
+    currentNavigatedMarker = null
+  }
+
+  // 找到目前要導航的 marker 並換成紅色水滴
+  markersLayer.eachLayer(layer => {
+    const latlng = layer.getLatLng()
+    if (latlng.lat === target.latitude && latlng.lng === target.longitude) {
+      currentNavigatedMarker = layer
+      currentNavigatedMarker.originalIcon = layer.options.icon // 儲存原圖示
+      currentNavigatedMarker.setIcon(redIcon)
+    }
+  })
+
+  // 顯示導航路線
+  routingControl.value = L.Routing.control({
+    waypoints: [from, to],
+    routeWhileDragging: false,
+    show: true,
+    addWaypoints: false,
+    collapsible: true,
+    createMarker: () => null
+  }).addTo(map)
+})
+
 const moveToGPS = () => {
   if (gpsMarker && map) {
     const latlng = gpsMarker.getLatLng()
@@ -116,104 +166,30 @@ const moveToGPS = () => {
   }
 }
 
-const navigateToStore = (targetLat, targetLng, storeName) => {
-  if (!map) return
+const cancelNavigation = () => {
+  if (routingControl.value) {
+    map.removeControl(routingControl.value)
+    routingControl.value = null
+  }
 
-  navigator.geolocation.getCurrentPosition(position => {
-    const userLatLng = L.latLng(position.coords.latitude, position.coords.longitude)
-    const storeLatLng = L.latLng(targetLat, targetLng)
-
-    if (routingControl) {
-      map.removeControl(routingControl)
-    }
-
-    routingControl = L.Routing.control({
-      waypoints: [userLatLng, storeLatLng],
-      routeWhileDragging: false,
-      draggableWaypoints: false,
-      show: true,
-      createMarker: () => null,
-      summaryTemplate: '<h2>{name}</h2><p>{distance}</p>' 
-    }).addTo(map)
-    routingControl.on('routesfound', function (e) {
-      setTimeout(() => {
-        const existingCancelBtn = document.getElementById('cancelRouteFixedBtn')
-        const existingArrow = document.getElementById('toggleRouteStepsBtn')
-        const routeContainer = document.querySelector('.leaflet-routing-container')
-        if (!existingCancelBtn && routeContainer) {
-          const cancelBtn = document.createElement('button')
-          cancelBtn.id = 'cancelRouteFixedBtn'
-          cancelBtn.textContent = '取消導航'
-          cancelBtn.style.cssText = `
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 1100;
-            padding: 6px 10px;
-            font-size: 13px;
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-            cursor: pointer;
-          `
-          cancelBtn.onclick = () => {
-            if (routingControl) {
-              map.removeControl(routingControl)
-              routingControl = null
-            }
-            map.closePopup()
-            cancelBtn.remove()
-            document.getElementById('toggleRouteStepsBtn')?.remove()
-          }
-          document.getElementById('map')?.appendChild(cancelBtn)
-        }
-
-        if (routeContainer) {
-          if (existingArrow) existingArrow.remove()
-
-          const arrowBtn = document.createElement('button')
-          arrowBtn.id = 'toggleRouteStepsBtn'
-          arrowBtn.textContent = '▲'
-          arrowBtn.style.cssText = `
-            display: block;
-            margin: 10px auto 0;
-            padding: 4px 12px;
-            font-size: 16px;
-            background-color: #e0e0e0;
-            color: #333;
-            border: none;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-            cursor: pointer;
-          `
-
-          const stepsTable = routeContainer.querySelector('.leaflet-routing-alt table')
-          let collapsed = false
-          arrowBtn.onclick = () => {
-            if (!stepsTable) return
-            collapsed = !collapsed
-            stepsTable.style.display = collapsed ? 'none' : 'table'
-            arrowBtn.textContent = collapsed ? '▼' : '▲'
-          }
-
-          routeContainer.appendChild(arrowBtn)
-        }
-      }, 100)
-
-      map.setView(storeLatLng, 15)
-    })
-  }, () => {
-    alert('無法取得您的 GPS 位置')
-  })
+  // 還原店家 marker 圖示
+  if (currentNavigatedMarker && currentNavigatedMarker.originalIcon) {
+    currentNavigatedMarker.setIcon(currentNavigatedMarker.originalIcon)
+    currentNavigatedMarker = null
+  }
 }
 
-defineExpose({
-  getMap: () => map,
-  navigateToStore
+
+onBeforeUnmount(() => {
+  if (routingControl.value && map) {
+    map.removeControl(routingControl.value)
+  }
+  if (destinationMarker && map) {
+    map.removeLayer(destinationMarker)
+  }
 })
 </script>
+
 
 <style scoped>
 .map-container {
@@ -223,6 +199,8 @@ defineExpose({
 
 .gps-button {
   position: absolute;
+  bottom: 20px;
+  right: 20px;
   z-index: 1000;
   background-color: #1e90ff;
   color: white;
@@ -232,9 +210,6 @@ defineExpose({
   font-size: 14px;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s;
-  bottom: 20px;
-  right: 20px;
 }
 
 .gps-button:hover {
@@ -260,16 +235,21 @@ defineExpose({
   background-color: #218838;
 }
 
-.leaflet-routing-alt {
-  max-height: 200px;
-  overflow-y: auto;
-  padding-right: 6px;
+/* 讓取消導航按鈕與 GPS 按鈕不同位置（例如往上浮） */
+.cancel-button {
+  bottom: 70px !important;
+  background-color: #dc3545; /* Bootstrap 紅 */
 }
 
+.cancel-button:hover {
+  background-color: #c82333; /* hover 紅色加深 */
+}
+
+</style>
+
+<style>
+/* 隱藏 Leaflet Routing Machine 的導航資訊卡 */
 .leaflet-routing-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
+  display: none !important;
 }
 </style>
