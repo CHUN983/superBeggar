@@ -230,6 +230,15 @@ async function fetchDetail(store, type) {
     console.error('取得商店詳細資料失敗', e);
   }
 }
+
+const emit = defineEmits(['navigate-to'])
+
+function handleNavigation(store) {
+  emit('navigate-to', {
+    latitude: store.latitude,
+    longitude: store.longitude
+  })
+}
 </script> 
 
 
