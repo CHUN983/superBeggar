@@ -30,5 +30,8 @@ export async function fetchFamilyShops({ oldPKeys = [], postInfo = '', latitude 
   if (!res.ok) throw new Error(`FamilyMart API error: ${res.status}`)
   const json = await res.json()
   if (json.code !== 1) throw new Error(`FamilyMart API returned code ${json.code}`)
-  return json.data || []
+  return (json.data || []).map(store => ({
+    ...store,
+    type: 'family'
+  }))
 }

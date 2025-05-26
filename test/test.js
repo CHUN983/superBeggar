@@ -58,24 +58,10 @@ export async function fetchNearby711(token, latitude, longitude) {
 
   const stores = js.element.StoreStockItemList || []
 
-  const filteredStores = stores.filter(store => (store.CategoryStockItems?.length ?? 0) > 0)
-
-  return filteredStores.map((store) => {
-    const storeNo = String(store.StoreNo)
-    const extra = storeMap[storeNo] || {}
-
-    return {
-      StoreNo: storeNo,
-      StoreName: store.StoreName,
-      Distance: store.Distance,
-      longitude: extra.X || null,
-      latitude: extra.Y || null,
-      address: extra.Address || '',
-      tel: extra.Telno || '',
-      type: 'seven'
-    }
-  })
+  // 僅回傳有商品的原始 store 資料
+  return stores.filter(store => (store.CategoryStockItems?.length ?? 0) > 0)
 }
+
 
 
 
@@ -88,7 +74,7 @@ async function main() {
     const longitude = 120.32308
 
     const nearbyStores = await fetchNearby711(token, latitude, longitude)
-    console.log('附近有庫存的 7-11 門市:', nearbyStores)
+    console.dir(nearbyStores, { depth: null }) // 完整展開印出所有內容
   } catch (err) {
     console.error('錯誤:', err)
   }

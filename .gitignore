@@ -21,6 +21,8 @@ Thumbs.db
 dist/
 build/
 
+# 忽略依賴安裝的目錄
+node_modules/
 
 # 忽略臨時檔案
 *.tmp
