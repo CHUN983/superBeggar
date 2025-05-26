@@ -74,7 +74,7 @@
     </div>
 
     <!-- Store Detail 顯示區塊 -->
-    <div v-if="selectedStoreDetail" class="store-detail-panel">
+    <div v-if="selectedStoreDetail && selectedStoreDetail" class="store-detail-panel">
       <StoreDetail :detail="selectedStoreDetail" />
     </div>
 
@@ -89,6 +89,8 @@ import axios from 'axios'
 
 const isFamilyMart = ref(true);
 const selectedStoreDetail = ref(null) // 儲存詳細資料
+const selectedStoreId = ref(null);         // 目前點選的店家 ID
+const showStoreDetail = ref(false);        // 是否顯示 StoreDetail.vue
 const props = defineProps({ stores: Object });
 const { toggleFavorite, isFavorited } = useFavorites()
 
@@ -96,6 +98,46 @@ const { toggleFavorite, isFavorited } = useFavorites()
 function toggle() {
   isFamilyMart.value = !isFamilyMart.value;
 }
+
+const toggleFavoriteStore = async (store) => {
+  if (selectedStoreNo.value === store.storeNo) {
+    // 如果再次點擊同一家，則收起
+    selectedStoreNo.value = null;
+    selectedStoreDetail.value = null;
+    showStoreDetail.value = false;
+    return;
+  }
+
+  selectedStoreNo.value = store.storeNo;
+  showStoreDetail.value = true;
+
+  try {
+    const res = await fetch('/api/store-detail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        type: store.type,                // 'seven' or 'family'
+        storeNo: store.storeNo,
+        latitude: store.latitude || 0,   // 若沒有可以補 0
+        longitude: store.longitude || 0,
+      }),
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      selectedStoreDetail.value = result.data[store.type]; // 只取指定類型的資料
+    } else {
+      console.error('查詢失敗', result.message);
+      selectedStoreDetail.value = null;
+    }
+  } catch (err) {
+    console.error('載入失敗', err);
+    selectedStoreDetail.value = null;
+  }
+};
 
 
 // 全家依距離排序

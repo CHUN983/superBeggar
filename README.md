@@ -78,6 +78,9 @@ my-map-app/
 │       │   ├─ Sidebar.vue
 │       │   ├─ ProductList.vue
 │       │   ├─ HeaderBar.vue
+│       │   ├─ Menu.vue
+│       │   ├─ StoreDetail.vue
+│       │   ├─ Favorite.vue
 │       │   └─ MapView.vue
 │       ├─ App.vue
 │       └─ main.js
