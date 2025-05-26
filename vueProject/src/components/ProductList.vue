@@ -22,14 +22,11 @@
           <button @click="handleNavigation">
             導航
           </button>
-          <button @click="handleNavigation">
-            詳細資料
-          </button>
           <br>
           <ul class="categoryList">
             <li v-for="k in s.info" :key="k.code" class="categoryBlock">
               <img
-                  :src="getCategoryIconPath(k.code)"
+                  :src="getCategoryIconPath_f(k.code)"
                   class="categoryIcon"
               />
               <span>{{k.name}}</span>
@@ -40,12 +37,12 @@
       </ul>
     </div>
 
-    <div v-else="">
+    <div v-else>
       <div v-if="stores.seven.length === 0" :style="{textAlign: 'center'}">
         <h2>目前商家沒有即期品</h2>
       </div>
       <ul>
-        <li v-for="s in stores.seven" :key="s.StoreNo" class="storeBlock">
+        <li v-for="s in sevenCategoriesGrouped" :key="s.StoreNo" class="storeBlock">
           7-11{{s.StoreName}}店 {{s.Distance.toFixed(0)}}m
 
           <button @click="toggleFavorite({ id: s.StoreNo, name: s.StoreName,  type:s.type, lat: s.Latitude, lng: s.Longitude})">
@@ -54,12 +51,13 @@
           <button @click="handleNavigation">
             導航
           </button>
-          <button @click="handleNavigation">
-            詳細資料
-          </button>
           <br>
           <ul class="categoryList">
-            <li v-for="k in s.items" :key="k.code" class="categoryBlock">
+            <li v-for="k in s.groupedItems" :key="k.name" class="categoryBlock">
+              <img
+                  :src="getCategoryIconPath_7(k.name)"
+                  class="categoryIcon"
+              />
               <span>{{k.name}}</span>
               <span>{{k.qty}}</span>
             </li>
@@ -82,16 +80,92 @@ function toggle() {
 const props = defineProps({ stores: Object });
 const { toggleFavorite, isFavorited } = useFavorites()
 
-// 根據距離排序的 computed 屬性
+// 全家依距離排序
 const sortedFamily = computed(() => {
   return [...(props.stores.family || [])].sort((a, b) => a.distance - b.distance);
 });
 
-const sortedSeven = computed(() => {
-  return [...(props.stores.seven || [])].sort((a, b) => a.Distance - b.Distance);
+// 7-11 重分類並合併
+const sevenCategoriesGrouped = computed(() => {
+  if (!props.stores?.seven) return [];
+
+  const groupMap = {
+    '中式': '便當粥品',
+    '燴飯': '便當粥品',
+    '炒飯': '便當粥品',
+    '粥品': '便當粥品',
+    '蔬食米食': '便當粥品',
+
+    '涼麵': '麵食',
+    '義大利麵': '麵食',
+    '炒麵': '麵食',
+    '湯麵': '麵食',
+    '蔬食麵': '麵食',
+
+    '切片水果': '生鮮蔬果',
+
+    '配菜型沙拉': '沙拉',
+    '主食型沙拉': '沙拉',
+
+    '配菜': '配菜湯品',
+    '小吃': '配菜湯品',
+
+    '壽司手捲類': '飯糰手卷',
+    '4℃加熱飯糰': '飯糰手卷',
+    '蔬食飯糰': '飯糰手卷',
+    '三角飯糰': '飯糰手卷',
+    '圓形飯糰': '飯糰手卷',
+
+    '麵包': '麵包蛋糕',
+    '點心': '麵包蛋糕',
+    '吐司': '麵包蛋糕',
+
+    '袋裝三明治': '三明治堡類',
+    '長堡': '三明治堡類',
+    '漢堡': '三明治堡類',
+    '熱壓土司': '三明治堡類',
+
+    '蛋糕': '甜點',
+    '湯類甜點': '甜點',
+    '泡芙': '甜點',
+
+    '其他': '其他',
+    '輕食便當': '其他',
+    '異國料理/焗烤': '其他'
+  };
+
+  return props.stores.seven.map(store => {
+    const grouped = {};
+    store.items.forEach(item => {
+      const groupName = groupMap[item.name] || '其他';
+      if (!grouped[groupName]) grouped[groupName] = 0;
+      grouped[groupName] += item.qty;
+    });
+    const groupedItems = Object.entries(grouped).map(([name, qty]) => ({
+      name,
+      qty
+    }));
+
+    return {
+      ...store,
+      groupedItems
+    };
+  });
 });
 
-const getCategoryIconPath = (code) => {
+const getCategoryIconPath_7 = (name) => {
+  if( name === '飯糰手卷' )  return new URL('@/assets/icons/rice-ball.svg', import.meta.url).href
+  if( name === '便當粥品' )  return new URL('@/assets/icons/bento.svg', import.meta.url).href
+  if( name === '麵食' )  return new URL('@/assets/icons/noodles.svg', import.meta.url).href
+  if( name === '配菜湯品' )  return new URL('@/assets/icons/soup.svg', import.meta.url).href
+  if( name === '三明治堡類' )  return new URL('@/assets/icons/sandwich.svg', import.meta.url).href
+  if( name === '生鮮蔬果' )  return new URL('@/assets/icons/banana.svg', import.meta.url).href
+  if( name === '麵包蛋糕' )  return new URL('@/assets/icons/bread.svg', import.meta.url).href
+  if( name === '甜點' )  return new URL('@/assets/icons/cake.svg', import.meta.url).href
+  return new URL('@/assets/icons/other.svg', import.meta.url).href
+}
+
+const getCategoryIconPath_f = (code) => {
   if( code === 'A' )  return new URL('@/assets/icons/rice-ball.svg', import.meta.url).href
   if( code === 'B' )  return new URL('@/assets/icons/bento.svg', import.meta.url).href
   if( code === 'C' )  return new URL('@/assets/icons/noodles.svg', import.meta.url).href
@@ -101,9 +175,11 @@ const getCategoryIconPath = (code) => {
   if( code === 'G' )  return new URL('@/assets/icons/bread.svg', import.meta.url).href
   return new URL('@/assets/icons/cake.svg', import.meta.url).href
 }
-</script> 
+
+</script>
 
 <style scoped>
+/* 原有樣式不變 */
   .product-list {
     flex-direction: column;
     align-items: center;
