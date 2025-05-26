@@ -1,5 +1,6 @@
 <template>
   <div v-if="stores" class="product-list">
+    <!-- Toggle 切換區塊略 -->
     <div class="toggle-container">
       <span>全家</span>
       <div class="slider" @click="toggle">
@@ -8,12 +9,18 @@
       <span>7-11</span>
     </div>
 
+    <!-- 全家區塊 -->
     <div v-if="isFamilyMart">
       <div v-if="stores.family.length === 0" :style="{textAlign: 'center'}">
         <h2>目前商家沒有即期品</h2>
       </div>
       <ul>
-        <li v-for="s in sortedFamily" :key="s.oldPKey" class="storeBlock">
+        <li
+          v-for="s in sortedFamily"
+          :key="s.oldPKey"
+          class="storeBlock"
+          @click="fetchDetail(s, 'family')"
+        >
           {{s.name}} {{s.distance.toFixed(0)}}m
 
           <button @click="toggleFavorite({ id: s.oldPKey, name: s.name, type:s.type, lat: s.latitude, lng: s.longitude })">
@@ -21,9 +28,6 @@
           </button>
           <button @click="handleNavigation">
             導航
-          </button>
-          <button @click="handleNavigation">
-            詳細資料
           </button>
           <br>
           <ul class="categoryList">
@@ -40,12 +44,18 @@
       </ul>
     </div>
 
+    <!-- 7-11 區塊 -->
     <div v-else="">
       <div v-if="stores.seven.length === 0" :style="{textAlign: 'center'}">
         <h2>目前商家沒有即期品</h2>
       </div>
       <ul>
-        <li v-for="s in stores.seven" :key="s.StoreNo" class="storeBlock">
+        <li
+          v-for="s in sortedSeven"
+          :key="s.StoreNo"
+          class="storeBlock"
+          @click="fetchDetail(s, 'seven')"
+        >
           7-11{{s.StoreName}}店 {{s.Distance.toFixed(0)}}m
 
           <button @click="toggleFavorite({ id: s.StoreNo, name: s.StoreName,  type:s.type, lat: s.Latitude, lng: s.Longitude})">
@@ -53,9 +63,6 @@
           </button>
           <button @click="handleNavigation">
             導航
-          </button>
-          <button @click="handleNavigation">
-            詳細資料
           </button>
           <br>
           <ul class="categoryList">
@@ -67,21 +74,30 @@
         </li>
       </ul>
     </div>
+
+    <!-- Store Detail 顯示區塊 -->
+    <div v-if="selectedStoreDetail" class="store-detail-panel">
+      <StoreDetail :detail="selectedStoreDetail" />
+    </div>
+
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
 import { useFavorites } from '@/composables/useFavorites.js'
+import StoreDetail from './StoreDetail.vue'  // 匯入元件
+import axios from 'axios'
 
 const isFamilyMart = ref(true);
-function toggle() {
-  isFamilyMart.value = !isFamilyMart.value;
-}
-
+const selectedStoreDetail = ref(null) // 儲存詳細資料
 const props = defineProps({ stores: Object });
 const { toggleFavorite, isFavorited } = useFavorites()
 
+
+function toggle() {
+  isFamilyMart.value = !isFamilyMart.value;
+}
 // 根據距離排序的 computed 屬性
 const sortedFamily = computed(() => {
   return [...(props.stores.family || [])].sort((a, b) => a.distance - b.distance);
@@ -100,6 +116,29 @@ const getCategoryIconPath = (code) => {
   if( code === 'F' )  return new URL('@/assets/icons/banana.svg', import.meta.url).href
   if( code === 'G' )  return new URL('@/assets/icons/bread.svg', import.meta.url).href
   return new URL('@/assets/icons/cake.svg', import.meta.url).href
+}
+
+// 點擊商店後取得詳細資料
+async function fetchDetail(store, type) {
+  const storeNo = type === 'family' ? store.oldPKey : store.StoreNo
+  const lat = type === 'family' ? store.latitude : store.Latitude
+  const lng = type === 'family' ? store.longitude : store.Longitude
+
+  try {
+    const res = await axios.post('/api/store-detail', {
+      type,
+      storeNo,
+      latitude: lat,
+      longitude: lng,
+    })
+
+    if (res.data.success) {
+      selectedStoreDetail.value = res.data.data[type]
+      selectedStoreDetail.value.type = type  // 傳遞類型資訊
+    }
+  } catch (e) {
+    console.error('取得商店詳細資料失敗', e)
+  }
 }
 </script> 
 
@@ -162,6 +201,11 @@ const getCategoryIconPath = (code) => {
     padding: 5px;
     background-color: #f9f9f9;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  .storeBlock:hover{
+    background-color: #dddada;
   }
 
   .categoryList {
@@ -174,20 +218,35 @@ const getCategoryIconPath = (code) => {
 
   .categoryBlock {
     list-style: none;
-    border: 1px solid #888;
     border-radius: 8px;
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     text-align: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     padding: 10px 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
+  .storeBlock:hover .categoryBlock {
+    background-color: #dddada;
+  }
+
   .categoryIcon {
     width: 28px;
     height: 28px;
     margin: 0 auto 4px;
+  }
+
+  .store-detail-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20vw;
+    height: 100vh;
+    background-color: white;
+    border-left: 2px solid #ccc;
+    overflow-y: auto;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
   }
 </style>
