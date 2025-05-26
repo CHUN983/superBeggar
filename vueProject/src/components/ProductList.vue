@@ -99,7 +99,7 @@ const getCategoryIconPath = (code) => {
   if( code === 'E' )  return new URL('@/assets/icons/sandwich.svg', import.meta.url).href
   if( code === 'F' )  return new URL('@/assets/icons/banana.svg', import.meta.url).href
   if( code === 'G' )  return new URL('@/assets/icons/bread.svg', import.meta.url).href
-  return new URL('@/assets/icons/pudding.svg', import.meta.url).href
+  return new URL('@/assets/icons/cake.svg', import.meta.url).href
 }
 </script> 
 
@@ -183,16 +183,11 @@ const getCategoryIconPath = (code) => {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    cursor: pointer;
-  }
-
-  .categoryBlock:hover {
-    background-color: #e0e0e0;
   }
 
   .categoryIcon {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     margin: 0 auto 4px;
   }
 </style>
