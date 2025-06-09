@@ -118,7 +118,7 @@ flowchart TD
 
 ```
 
-2. 收藏店家序列圖（Sequence Diagram）
+2. 序列圖（Sequence Diagram）
 ```mermaid
 sequenceDiagram
     participant User
@@ -143,7 +143,7 @@ sequenceDiagram
 ```
 
 
-3. 收藏功能 UML 類別圖（Class Diagram）
+3. UML Component Diagram（元件圖）
 ```mermaid
 flowchart LR
     subgraph 前端系統
