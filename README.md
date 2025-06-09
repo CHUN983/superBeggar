@@ -99,15 +99,72 @@ my-map-app/
 ---
 ## 流程圖與架構
 ```mermaid
-graph TD
-    使用者 -->|操作搜尋| App.vue
-    App.vue -->|發送 API| /api/stores
-    /api/stores --> 後端Server
-    後端Server -->|取得資料| FamilyMart API
-    後端Server -->|取得資料| SevenEleven API
-    後端Server -->|回傳 JSON| App.vue
-    App.vue -->|更新資料| MapView.vue
-    App.vue --> ProductList.vue
+flowchart TD
+    Start(使用者開啟網頁或搜尋區域) --> Sidebar[Sidebar.vue 選擇地區]
+    Sidebar -->|觸發查詢事件| App[App.vue]
+    App -->|傳送 API 請求| API[/api/stores]
+    API --> Server[後端伺服器]
+    Server -->|向超商發送請求| Family[全家 API]
+    Server -->|向超商發送請求| Seven[7-11 API]
+    Family --> Server
+    Seven --> Server
+    Server -->|統一整理資料| API
+    API --> App
+    App --> MapView[MapView.vue 顯示地圖]
+    App --> ProductList[ProductList.vue 顯示即期品列表]
+    End(使用者查看即期品)
+```
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Sidebar.vue
+    participant App.vue
+    participant Backend
+    participant FamilyMartAPI
+    participant SevenAPI
+    participant MapView.vue
+    participant ProductList.vue
+
+    User->>Sidebar.vue: 選擇地區
+    Sidebar.vue->>App.vue: 通知需查詢資料
+    App.vue->>Backend: GET /api/stores?lat=...&lng=...
+    Backend->>FamilyMartAPI: 查詢全家即期品
+    Backend->>SevenAPI: 查詢 7-11 即期品
+    FamilyMartAPI-->>Backend: 回傳 JSON
+    SevenAPI-->>Backend: 回傳 JSON
+    Backend-->>App.vue: 回傳合併資料
+    App.vue->>MapView.vue: 顯示地圖上的門市
+    App.vue->>ProductList.vue: 顯示即期品列表
+```
+
+```mermaid
+classDiagram
+    class App {
+        +fetchStores()
+        +storeData
+    }
+
+    class Sidebar {
+        +onRegionSelect()
+    }
+
+    class MapView {
+        +displayStores()
+    }
+
+    class ProductList {
+        +renderProducts()
+    }
+
+    class Backend {
+        +getNearbyStores()
+    }
+
+    App --> Sidebar : 通知查詢
+    App --> MapView : 更新地圖
+    App --> ProductList : 顯示產品
+    App --> Backend : 發送 API
 
 ```
 
