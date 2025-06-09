@@ -145,32 +145,31 @@ sequenceDiagram
 
 3. 收藏功能 UML 類別圖（Class Diagram）
 ```mermaid
-classDiagram
-    class App {
-        +fetchStores()
-        +storeData
-    }
+flowchart LR
+    subgraph 前端系統
+        Header[<<component>> HeaderBar.vue]
+        Sidebar[<<component>> Sidebar.vue]
+        ProductList[<<component>> ProductList.vue]
+        StoreDetail[<<component>> StoreDetail.vue]
+        Favorite[<<component>> Favorite.vue]
+        App[<<component>> App.vue]
+        LocalStorage[LocalStorage]
+    end
 
-    class Sidebar {
-        +onRegionSelect()
-    }
+    subgraph 後端系統
+        API[<<component>> /api/store-detail]
+        Server[<<component>> Express Server]
+    end
 
-    class MapView {
-        +displayStores()
-    }
+    ProductList -->|點擊愛心 icon| App
+    App -->|更新收藏| LocalStorage
+    Favorite -->|讀取收藏清單| LocalStorage
+    Favorite -->|向 API 請求店家資訊| API
+    API --> Server
 
-    class ProductList {
-        +renderProducts()
-    }
-
-    class Backend {
-        +getNearbyStores()
-    }
-
-    App --> Sidebar : 通知查詢
-    App --> MapView : 更新地圖
-    App --> ProductList : 顯示產品
-    App --> Backend : 發送 API
+    Sidebar --> App
+    Header --> App
+    StoreDetail --> App
 
 ```
 
