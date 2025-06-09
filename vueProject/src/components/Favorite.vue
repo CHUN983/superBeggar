@@ -132,8 +132,8 @@ async function loadDetails() {
       id: store.id,
       type: store.type,
       name: s.name || '7-11'+s.rawItems.StoreName+'店',
-      lat: s.latitude || s.Latitude,
-      lng: s.longitude || s.Longitude,
+      lat: s.latitude,
+      lng: s.longitude,
       items: s.info || s.groupedItems || [], // 統一用 items
     })
   } catch (err) {

@@ -52,7 +52,7 @@
         <li v-for="s in sevenCategoriesGrouped" :key="s.StoreNo" class="storeBlock" @click="fetchDetail(s, 'seven')">
           7-11{{s.StoreName}}店 {{s.Distance.toFixed(0)}}m
 
-          <button @click.stop="toggleFavorite({ id: s.StoreNo, name: s.StoreName,  type:s.type, lat: s.Latitude, lng: s.Longitude})">
+          <button @click.stop="toggleFavorite({ id: s.StoreNo, name: s.StoreName,  type:s.type, lat: s.latitude, lng: s.longitude})">
             <font-awesome-icon :icon="isFavorited(s.StoreNo) ? ['fas', 'heart'] : ['far', 'heart']" />
           </button>
           <button @click.stop="handleNavigation(s)">
@@ -253,8 +253,8 @@ async function fetchDetail(store, type) {
 
   console.log(type)
 
-  const lat = type === 'family' ? store.latitude : store.Latitude;
-  const lng = type === 'family' ? store.longitude : store.Longitude;
+  const lat = type === 'family' ? store.latitude : store.latitude;
+  const lng = type === 'family' ? store.longitude : store.longitude;
 
   try {
     const res = await axios.post('/api/store-detail', {
