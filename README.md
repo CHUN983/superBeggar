@@ -98,6 +98,8 @@ my-map-app/
 ```
 ---
 ## 流程圖與架構
+
+1. 收藏店家流程圖（Flowchart）
 ```mermaid
 flowchart TD
     Start(使用者開啟網頁或搜尋區域) --> Sidebar[Sidebar.vue：選擇地區]
@@ -116,6 +118,7 @@ flowchart TD
 
 ```
 
+2. 收藏店家序列圖（Sequence Diagram）
 ```mermaid
 sequenceDiagram
     participant User
@@ -139,6 +142,8 @@ sequenceDiagram
     App.vue->>ProductList.vue: 顯示即期品列表
 ```
 
+
+3. 收藏功能 UML 類別圖（Class Diagram）
 ```mermaid
 classDiagram
     class App {
