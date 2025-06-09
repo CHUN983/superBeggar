@@ -100,19 +100,20 @@ my-map-app/
 ## 流程圖與架構
 ```mermaid
 flowchart TD
-    Start(使用者開啟網頁或搜尋區域) --> Sidebar[Sidebar.vue 選擇地區]
-    Sidebar -->|觸發查詢事件| App[App.vue]
-    App -->|傳送 API 請求| API[/api/stores]
-    API --> Server[後端伺服器]
+    Start(使用者開啟網頁或搜尋區域) --> Sidebar[Sidebar.vue：選擇地區]
+    Sidebar -->|觸發查詢事件| App[App.vue：主控邏輯]
+    App -->|傳送 API 請求| APIReq[API 請求處理器]
+    APIReq --> Server[後端伺服器]
     Server -->|向超商發送請求| Family[全家 API]
     Server -->|向超商發送請求| Seven[7-11 API]
     Family --> Server
     Seven --> Server
-    Server -->|統一整理資料| API
-    API --> App
-    App --> MapView[MapView.vue 顯示地圖]
-    App --> ProductList[ProductList.vue 顯示即期品列表]
-    End(使用者查看即期品)
+    Server -->|統整資料回傳| APIReq
+    APIReq --> App
+    App --> MapView[MapView.vue：顯示地圖]
+    App --> ProductList[ProductList.vue：顯示即期品列表]
+    ProductList --> End(使用者查看即期品)
+
 ```
 
 ```mermaid
