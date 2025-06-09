@@ -96,6 +96,19 @@ my-map-app/
 ├─ test/
 └─ README.md
 ```
+---
+## 流程圖與架構
+```mermaid
+graph TD
+    使用者 -->|操作搜尋| App.vue
+    App.vue -->|發送 API| /api/stores
+    /api/stores --> 後端Server
+    後端Server -->|取得資料| FamilyMart API
+    後端Server -->|取得資料| SevenEleven API
+    後端Server -->|回傳 JSON| App.vue
+    App.vue -->|更新資料| MapView.vue
+    App.vue --> ProductList.vue
 
+```
 
 
