@@ -36,7 +36,7 @@ router.post('/stores', async (req, res) => {
 
 // POST /api/store-detail
 router.post('/store-detail', async (req, res) => {
-    
+  let { type, storeNo, latitude, longitude } = req.body
 
   // 若沒傳經緯度，預設0
   latitude = latitude || 0
